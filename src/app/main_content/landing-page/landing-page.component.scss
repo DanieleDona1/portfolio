@@ -5,8 +5,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 88px;
-  padding: 0 24px;
+  gap: 96px;
+  padding: 0 clamp(16px, 4vw, 24px);
 }
 
 .image-wrapper {
@@ -21,12 +21,10 @@ section {
   background-image: url('../../../assets/img/landing_page/background_default.svg');
   width: 100%;
   padding-top: 100%;
-  /* Erstellt ein quadratisches Verhältnis */
   grid-area: 1 / 1;
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
-  // transform: rotate(-23deg);
   transform: translate(5%, 30px);
 }
 
@@ -54,10 +52,10 @@ section {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 64px;
-  padding-top: 144px;
+  padding-bottom: 136px;
 
   >a {
     background-image: url('../../../assets/img/landing_page/arrow_down.svg');
