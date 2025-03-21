@@ -1,11 +1,14 @@
+@import '../../../../styles.scss';
+
 nav {
-  // position: sticky;
-  // bottom: 0;
-  background-color: rgba(137, 188, 217, 1);
+  position: sticky;
+  top: 0;
+  background-color: $secondary-bg-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 100px;
+  height: 10vh;
 }
 
 .author-badge {
@@ -13,7 +16,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  text-decoration: none;
   >div {
     width: 50px;
     height: 40px;
@@ -23,29 +26,30 @@ nav {
   }
 
   >b {
-    color: rgba(248, 245, 236, 1);
+    color: $font-color;
     font-size: 14px;
   }
 
   >span {
-    color: rgba(38, 46, 52, 1);
+    color: $primary-bg-color;
     font-size: 14px;
   }
 }
 
 .navigation-container {
+  background-color: $secondary-bg-color;
   display: flex;
   gap: 112px;
 
   >a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: rgba(38, 46, 52, 1);
+    color: $primary-bg-color;
     transition: color 200ms ease-in-out;
   }
 
   >a:hover {
-    color: rgba(248, 245, 236, 1);
+    color: $font-color;
   }
 }
 

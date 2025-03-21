@@ -1,7 +1,16 @@
-*{
+$primary-bg-color: rgba(38, 46, 52, 1);
+$secondary-bg-color: rgba(137, 188, 217, 1);
+$font-color: rgba(248, 245, 236, 1);
+
+* {
   margin: 0;
-  // font-family: ;
   font-family: 'Josefin Sans';
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $primary-bg-color;
 }
 
 /* josefin-sans-100 - latin */
