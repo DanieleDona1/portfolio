@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 section {
-  height: 92vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -168,6 +168,8 @@ section {
     flex-direction: column;
     align-items: center;
     padding-top: 32px;
+    height: 92vh;
+    height: 92dvh;
   }
 
   .author-badge {
