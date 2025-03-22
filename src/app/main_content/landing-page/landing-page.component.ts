@@ -1,16 +1,18 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 @Component({
   selector: 'app-landing-page',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, NavbarMobileComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent implements OnInit {
   texts = [
-    ' Frontend Developer.',
-    ' I turn designs into code.',
-    ' Always learning, always building.',
+    'Frontend Developer.',
+    'I turn designs into code.',
+    'Learn. Build. Repeat.',
+    // ' Always learning, always building.',
   ];
   typingSpeed = 150;
   deleteSpeed = 50;
@@ -43,7 +45,7 @@ export class LandingPageComponent implements OnInit {
 
     let text = this.textElementRef.nativeElement.textContent || '';
     const erase = () => {
-      if (text.length > 1 && this.textElementRef) {
+      if (text.length > 0 && this.textElementRef) {
         text = text.slice(0, -1);
         this.textElementRef.nativeElement.textContent = text;
         setTimeout(erase, this.deleteSpeed);

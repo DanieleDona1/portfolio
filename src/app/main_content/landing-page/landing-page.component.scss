@@ -5,14 +5,14 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 96px;
+  gap: clamp(40px, 6vw, 110px);
   padding: 0 clamp(16px, 4vw, 24px);
 }
 
 .image-wrapper {
   position: relative;
   display: grid;
-  max-width: 700px;
+  max-width: 600px;
   // margin: 0 auto;
   width: 100%;
 }
@@ -56,6 +56,8 @@ section {
   align-items: center;
   gap: 64px;
   padding-bottom: 136px;
+  padding-bottom: clamp(96px, 5vw, 120px);
+
 
   >a {
     background-image: url('../../../assets/img/landing_page/arrow_down.svg');
@@ -104,7 +106,7 @@ section {
   >h1 {
     font-size: 6rem;
     white-space: nowrap;
-    font-size: clamp(3rem, 5vw, 6rem);
+    font-size: clamp(3rem, 5vw, 4.5rem);
     margin-bottom: 20px;
   }
 }
@@ -115,17 +117,20 @@ section {
   justify-content: center;
   align-items: center;
   min-height: 56px;
-  min-width: 710px;
-  >span {
-    font-size: clamp(1.45rem, 4vw, 3rem);
+  width: 100%;
+  // min-width: 464px;
+  position: relative;
+  >div {
+    position: absolute;
+    font-size: clamp(1.45rem, 3vw, 3rem);
     overflow: hidden;
     border-right: 3px solid $secondary-bg-color;
     animation: blink 0.5s step-end infinite alternate;
   }
-  >span:empty::after {
-    content: 'Frontend Developer.';
-    color: $font-color;
-  }
+  // >span:empty::after {
+  //   content: 'Frontend Developer.';
+  //   color: $font-color;
+  // }
 }
 
 @keyframes blink {

@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="fixed-toolbar">
+  <span class="toolbar-title">My Website</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><a href="#why-me">Why Me</a></button>
+    <button mat-menu-item><a href="#skills">Skills</a></button>
+    <button mat-menu-item><a href="#projects">Projects</a></button>
+    <button mat-menu-item><a href="#contact-me">Contact Me</a></button>
+  </mat-menu>
+</mat-toolbar>
