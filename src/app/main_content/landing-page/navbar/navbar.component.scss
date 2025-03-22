@@ -1,5 +1,9 @@
 @import '../../../../styles.scss';
 
+app-navbar {
+  
+}
+
 nav {
   position: sticky;
   top: 0;
@@ -14,7 +18,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 16px 100px;
-    height: 10vh;
+    height: 8vh;
   }
 }
 

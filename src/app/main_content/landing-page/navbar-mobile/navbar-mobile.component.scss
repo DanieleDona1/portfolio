@@ -1,5 +1,9 @@
+
 mat-toolbar {
   --mat-sys-surface: rgba(137, 188, 217, 1);
+  height: 8vh;
+  height: 8dvh;
+  display: none;
 }
 
 mat-icon {
@@ -14,3 +18,8 @@ mat-icon {
   margin-left: auto;
 }
 
+@media (max-width: 1023px) {
+  mat-toolbar {
+    display: flex;
+  }
+}
