@@ -1,9 +1,17 @@
-<app-navbar-mobile></app-navbar-mobile>
+<app-navbar-mobile (displayChanged)="toggleMenu()"></app-navbar-mobile>
 <section id="developerProfil">
   <div class="image-wrapper">
     <div class="background-image"></div>
-    <div class="overlay profile-photo"></div>
-    <div class="overlay menu"></div>
+    <div class="overlay profile-photo" #profilPhoto></div>
+    <div class="overlay menu" #menuList>
+      <button (click)="toggleMenu()">X</button>
+      <mat-icon>close</mat-icon>
+      <a href="#why-me">Why me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <!-- <a href="#language">Language</a> -->
+    </div>
   </div>
 
   <div class="developer-data">

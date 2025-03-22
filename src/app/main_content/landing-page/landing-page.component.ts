@@ -1,16 +1,61 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
+import {MatIconModule} from '@angular/material/icon';
+// import { HostListener } from '@angular/core';
+// import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-landing-page',
-  imports: [NavbarComponent, NavbarMobileComponent],
+  imports: [NavbarComponent, NavbarMobileComponent, MatIconModule ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
 export class LandingPageComponent implements OnInit {
+  @ViewChild('menuList') menuList!: ElementRef;
+  @ViewChild('profilPhoto') profilPhoto!: ElementRef;
+  isMenuVisible = false;
+  // isClickInsideMenu = false;
+
+  constructor(private renderer: Renderer2) {}
+
+  toggleMenu() {
+    const menuElement = this.menuList.nativeElement;
+    const profilPhoto = this.profilPhoto.nativeElement;
+    if (this.isMenuVisible) {
+      menuElement.style.display = 'none';
+      profilPhoto.style.opacity = '1'
+      this.isMenuVisible = false;
+    } else {
+      menuElement.style.display = 'flex';
+      profilPhoto.style.opacity = '0'
+      this.isMenuVisible = true;
+    }
+  }
+
+  // // HostListener prüft, ob außerhalb des Menüs geklickt wurde
+  // @HostListener('document:click', ['$event'])
+  // onOutsideClick(event: MouseEvent) {
+  //   const menuElement = this.menuList.nativeElement;
+  //   if (this.isMenuVisible && !menuElement.contains(event.target as Node)) {
+  //     // Nur toggeln, wenn nicht innerhalb des Menüs geklickt wurde
+  //     if (!this.isClickInsideMenu) {
+  //       this.toggleMenu();  // Menü schließen, wenn außerhalb geklickt wird
+  //     }
+  //     this.isClickInsideMenu = false;  // Setze den Flag zurück
+  //   }
+  // }
+
+  // // Wenn auf das Menü geklickt wird, den Flag setzen
+  // @HostListener('click', ['$event'])
+  // onMenuClick() {
+  //   this.isClickInsideMenu = true;
+  // }
+
+
+  // typewriterCode -----------------------------------------------
   texts = [
     'Frontend Developer.',
-    'I turn designs into code.',
+    'Turning design into code.',
     'Learn. Build. Repeat.',
     // ' Always learning, always building.',
   ];
@@ -19,8 +64,6 @@ export class LandingPageComponent implements OnInit {
   pauseTime = 1350;
   currentTextIndex = 0;
   @ViewChild('textElement', { static: true }) textElementRef!: ElementRef;
-
-  constructor() {}
 
   ngOnInit(): void {
     this.loop();

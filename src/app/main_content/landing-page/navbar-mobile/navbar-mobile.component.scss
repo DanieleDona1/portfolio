@@ -1,6 +1,6 @@
 
 mat-toolbar {
-  --mat-sys-surface: rgba(137, 188, 217, 1);
+  --mat-sys-surface: rgba(38, 46, 52, 1);
   height: 8vh;
   height: 8dvh;
   display: none;
@@ -16,6 +16,34 @@ mat-icon {
 
 .menu-button {
   margin-left: auto;
+}
+
+.author-badge {
+  line-height: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  // background-color: rgba(137, 188, 217, 1);
+
+  >div {
+    width: 30px;
+    height: 20px;
+    background-image: url('../../../../assets/img/navbar/logo_hover.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  >b {
+    color: rgba(248, 245, 236, 1);
+    font-size: 14px;
+  }
+
+  >span {
+    color: rgba(137, 188, 217, 1);
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 1023px) {

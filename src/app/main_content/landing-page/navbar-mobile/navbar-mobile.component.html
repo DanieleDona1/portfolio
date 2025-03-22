@@ -1,6 +1,12 @@
 <mat-toolbar color="primary" class="fixed-toolbar">
-  <span class="toolbar-title">My Website</span>
-  <button mat-icon-button class="menu-button">
+  <span class="toolbar-title">
+    <div class="author-badge">
+      <div class="navbar-logo"></div>
+      <b>D. Dona</b>
+      <span>developer</span>
+    </div>
+  </span>
+  <button mat-icon-button (click)="changeDisplayFlex();" class="menu-button">
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
