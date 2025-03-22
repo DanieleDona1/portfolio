@@ -5,7 +5,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: clamp(40px, 6vw, 110px);
+  gap: clamp(32px, 6vw, 110px);
   padding: 0 clamp(16px, 4vw, 24px);
 }
 
@@ -117,8 +117,8 @@ section {
   >h1 {
     font-size: 6rem;
     white-space: nowrap;
-    font-size: clamp(2.75rem, 5vw, 4.5rem);
-    margin-bottom: 20px;
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    margin-bottom: 8px;
   }
 }
 
@@ -204,9 +204,17 @@ section {
 
 }
 
-@media (max-height: 540px) {
+@media (max-width: 720px) {
+  .developer-data {
+    gap: 10px;
+  }
 
-  /* CSS-Regeln für Bildschirme mit maximal 320px Höhe */
+  .image-wrapper {
+    max-width: 320px;
+  }
+}
+
+@media (max-height: 540px) {
   .image-wrapper {
     max-width: 300px;
   }
@@ -217,8 +225,6 @@ section {
 }
 
 @media (max-height: 345px) {
-
-  /* CSS-Regeln für Bildschirme mit maximal 320px Höhe */
   .image-wrapper {
     max-width: 300px;
   }
