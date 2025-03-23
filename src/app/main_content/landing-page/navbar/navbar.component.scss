@@ -1,9 +1,11 @@
-@import '../../../../styles.scss';
+$background-primary: rgba(38, 46, 52, 1);
+$background-secondary: rgba(137, 188, 217, 1);
+$text-primary: rgba(248, 245, 236, 1);
 
 nav {
   position: sticky;
   top: 0;
-  background-color: $secondary-bg-color;
+  background-color: $background-secondary;
   display: flex;
   justify-content: center;
 
@@ -34,30 +36,30 @@ nav {
   }
 
   >b {
-    color: $font-color;
+    color: $text-primary;
     font-size: 14px;
   }
 
   >span {
-    color: $primary-bg-color;
+    color: $background-primary;
     font-size: 14px;
   }
 }
 
 .navigation-container {
-  background-color: $secondary-bg-color;
+  background-color: $background-secondary;
   display: flex;
   gap: 112px;
 
   >a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: $primary-bg-color;
+    color: $background-primary;
     transition: color 200ms ease-in-out;
   }
 
   >a:hover {
-    color: $font-color;
+    color: $text-primary;
   }
 }
 

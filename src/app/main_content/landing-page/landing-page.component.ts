@@ -2,11 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/co
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 // import { HostListener } from '@angular/core';
 // import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-landing-page',
-  imports: [NavbarComponent, NavbarMobileComponent, MatIconModule ],
+  imports: [NavbarComponent, NavbarMobileComponent, MatIconModule, MatButtonModule ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
