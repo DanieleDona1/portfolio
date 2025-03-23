@@ -166,50 +166,10 @@ section {
   display: flex;
 }
 
-// typwriter code --------------------------------
-.typewriter-animation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 56px;
+.app-typewriter-animation {
   width: 100%;
-  // min-width: 464px;
-  position: relative;
-  padding-top: 20px;
-
-  >div {
-    position: absolute;
-    font-size: clamp(1.55rem, 3vw, 3rem);
-    overflow: hidden;
-    // border-right: 3px solid $background-secondary;
-    animation: blink 0.5s step-end infinite alternate;
-  }
-
-  // >span:empty::after {
-  //   content: 'Frontend Developer.';
-  //   color: $font-color;
-  // }
 }
 
-@keyframes blink {
-
-  0%,
-  100% {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: rgba(137, 188, 217, 1);
-  }
-}
-
-@media (max-width: 720px) {
-  .typewriter-animation {
-    padding-top: 0;
-  }
-}
-
-// typewriter code ende ------------------------
 
 .d-none {
   display: none;
