@@ -1,0 +1,51 @@
+$background-primary: rgba(38, 46, 52, 1);
+$background-secondary: rgba(137, 188, 217, 1);
+$text-primary: rgba(248, 245, 236, 1);
+
+
+h2 {
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  color: $background-secondary;
+  text-align: center;
+}
+
+section {
+  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skillset-wrapper {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  gap: 3rem;
+}
+
+.skillset {
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  padding: 0 8px;
+  padding-bottom: 48px;
+  >div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 8px;
+  }
+  > div > div {
+    color: $text-primary
+  }
+  img {
+    margin-bottom: 16px;
+  }
+}
+
+.placeholder-img {
+  width: 60px;
+}

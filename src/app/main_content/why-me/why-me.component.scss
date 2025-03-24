@@ -10,13 +10,16 @@ section {
   color: $text-primary;
   padding: 0 16px;
   padding-top: 10vh;
-  min-height: 352px;
+  min-height: 400px;
 
   >div {
+    position: relative;
     width: 100%;
     max-width: 900px;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    min-height: 196px;
   }
 }
 
@@ -42,12 +45,27 @@ h2 {
     font-size: 1.2rem;
   }
 
-
   >p {
     flex: 1;
     box-sizing: border-box;
     font-size: 1.2rem;
     line-height: 1.3;
+  }
+  >a{
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  button {
+    border: unset;
+    cursor: pointer;
+    color: rgb(137, 188, 217);
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid rgb(137, 188, 217);
+    padding: 12px 24px;
+    font-size: 18px;
   }
 }
 

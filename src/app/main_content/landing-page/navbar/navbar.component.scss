@@ -2,9 +2,13 @@ $background-primary: rgba(38, 46, 52, 1);
 $background-secondary: rgba(137, 188, 217, 1);
 $text-primary: rgba(248, 245, 236, 1);
 
-nav {
+:host {
   position: sticky;
-  top: 0;
+  top: 200px;
+  // bottom: 500px;
+}
+
+nav {
   background-color: $background-secondary;
   display: flex;
   justify-content: center;

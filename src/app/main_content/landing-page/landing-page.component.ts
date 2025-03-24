@@ -1,5 +1,4 @@
 import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
-import { NavbarComponent } from './navbar/navbar.component';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -8,7 +7,7 @@ import { TypewriterAnimationComponent } from './typewriter-animation/typewriter-
 // import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-landing-page',
-  imports: [NavbarComponent, NavbarMobileComponent, MatIconModule, MatButtonModule, TypewriterAnimationComponent ],
+  imports: [ NavbarMobileComponent, MatIconModule, MatButtonModule, TypewriterAnimationComponent ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
