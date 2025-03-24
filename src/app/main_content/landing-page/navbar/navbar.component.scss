@@ -2,16 +2,13 @@ $background-primary: rgba(38, 46, 52, 1);
 $background-secondary: rgba(137, 188, 217, 1);
 $text-primary: rgba(248, 245, 236, 1);
 
-:host {
-  position: sticky;
-  top: 200px;
-  // bottom: 500px;
-}
-
 nav {
+  position: sticky;
+  top: 0px;
   background-color: $background-secondary;
   display: flex;
   justify-content: center;
+  z-index: 1;
 
   >div {
     max-width: 1440px;
@@ -60,11 +57,12 @@ nav {
     font-size: 1.5rem;
     color: $background-primary;
     transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $text-primary;
+    }
   }
 
-  >a:hover {
-    color: $text-primary;
-  }
 }
 
 .language-container {
@@ -92,4 +90,10 @@ nav {
 
 .d-none {
   display: none;
+}
+
+@media (max-width: 1023px) {
+  nav {
+    display: none;
+  }
 }

@@ -18,6 +18,11 @@ section {
   // margin: 0 auto;
   width: 100%;
   transition: background-image 150ms ease-in-out;
+
+  &:hover .background-image {
+    background-image: url('../../../assets/img/landing_page/background_hover.svg');
+  }
+
 }
 
 .background-image {
@@ -43,14 +48,11 @@ section {
 }
 
 .profile-photo {
-  // background-image: url('../../../assets/img/landing_page/profilfoto.png');
+  background-image: url('../../../assets/img/landing_page/profilfoto.png');
   background-size: contain;
   transition: opacity 50ms ease
 }
 
-.image-wrapper:hover .background-image {
-  background-image: url('../../../assets/img/landing_page/background_hover.svg');
-}
 
 .menu {
   background-image: url('../../../assets/img/landing_page/menu_image.svg');
@@ -79,7 +81,7 @@ section {
     transition: background-image 150ms ease-in-out;
   }
 
-  >a:hover {
+  &:hover>a {
     background-image: url('../../../assets/img/landing_page/arrow_down_hover.svg');
   }
 }
@@ -89,6 +91,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   >div {
     width: 50px;
     height: 40px;
@@ -142,12 +145,13 @@ section {
   font-size: 18px;
   margin-bottom: 16px;
   transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #d1d0d0;
+    cursor: pointer;
+  }
 }
 
-.overlay.menu button:hover {
-  background-color: #d1d0d0;
-  cursor: pointer;
-}
 
 /* Links */
 .overlay.menu a {
@@ -157,11 +161,12 @@ section {
   font-size: 18px;
   margin: 10px 0;
   transition: color 0.2s;
+
+  &:hover {
+    color: #e0e0e0;
+  }
 }
 
-.overlay.menu a:hover {
-  color: #e0e0e0;
-}
 
 .overlay.menu.visible {
   display: flex;
@@ -254,5 +259,4 @@ section {
   h1 {
     padding-top: 20px;
   }
-
 }

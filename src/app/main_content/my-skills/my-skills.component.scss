@@ -2,35 +2,39 @@ $background-primary: rgba(38, 46, 52, 1);
 $background-secondary: rgba(137, 188, 217, 1);
 $text-primary: rgba(248, 245, 236, 1);
 
-
-h2 {
-  font-size: clamp(2rem, 6vw, 4.2rem);
-  color: $background-secondary;
-  text-align: center;
-}
-
 section {
   padding-top: 10vh;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.skillset-wrapper {
-  display: flex;
   flex-direction: column;
-  // justify-content: center;
-  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+
+  >div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 6vw, 4.2rem);
+    color: $background-secondary;
+    text-align: center;
+  }
 }
 
 .skillset {
-  max-width: 500px;
+  width: 100%;
+  max-width: 475px;
   display: flex;
   justify-content: space-between;
   gap: 50px;
   flex-wrap: wrap;
   padding: 0 8px;
   padding-bottom: 48px;
+
   >div {
     display: flex;
     flex-direction: column;
@@ -38,14 +42,191 @@ section {
     align-items: center;
     // margin-bottom: 8px;
   }
-  > div > div {
-    color: $text-primary
+
+  >div>div {
+    color: $background-secondary;
   }
+
   img {
+    padding-top: 16px;
     margin-bottom: 16px;
+    max-width: 56px;
+  }
+
+  img:hover {
+    animation: bounce 0.6s ease-in-out;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
   }
 }
 
 .placeholder-img {
   width: 60px;
+}
+
+.focus-container {
+  display: flex;
+  width: 100%;
+  max-width: 475px;
+  height: 400px;
+
+  >div {
+    background-image: url('../../../assets/img/my_skills/bubble-default.svg');
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 500ms ease-in-out;
+    gap: 20px;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    color: $text-primary;
+  }
+
+  &:hover {
+    >div {
+      background-image: url('../../../assets/img/my_skills/bubble-hover.svg');
+    }
+
+    .current-technology {
+      >div {
+        background-image: url('../../../assets/img/my_skills/angular-color.svg');
+      }
+    }
+  }
+}
+
+
+.current-technology {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  >div {
+    background-image: url('../../../assets/img/my_skills/angular.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 101px;
+    height: 71px;
+    padding-top: 8px;
+    margin-bottom: 8px;
+    max-width: 56px;
+    transition: background-image 500ms ease-in-out;
+  }
+
+  >span {
+    color: $text-primary;
+  }
+}
+
+.lets-talk-container {
+  a{
+    text-decoration: none;
+  }
+  button {
+    display: none;
+    border: unset;
+    cursor: pointer;
+    color: $background-primary;
+    background-color: rgb(137, 188, 217);
+    border-radius: 20px;
+    border: 1px solid rgb(137, 188, 217);
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+
+  button:hover {
+    background-color: hsl(202, 51%, 79%);
+  }
+}
+
+@media (max-width: 1023px) {
+  section>div {
+    flex-direction: column;
+  }
+
+  .skillset .placeholder-img {
+    display: none;
+  }
+
+  .skillset {
+    justify-content: center;
+  }
+
+  .skillset img {
+    max-width: 48px;
+    margin-bottom: 10px;
+  }
+
+  .lets-talk-container {
+    button {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  section>div {
+    flex-direction: column;
+  }
+
+  .skillset .placeholder-img {
+    display: none;
+  }
+
+  .skillset {
+    justify-content: center;
+  }
+
+  .skillset>div>div {
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .skillset {
+    gap: 24px;
+  }
+
+  .skillset img {
+    max-width: 40px;
+    // margin-bottom: px;
+  }
+
+  .skillset img {
+    padding-top: 0;
+  }
+
+
+
+  .skillset>div>div {
+    display: none;
+  }
+
+  .focus-container {
+    padding: 20px;
+  }
+
+  .skillset {
+    padding-bottom: 0px;
+  }
 }
