@@ -134,11 +134,13 @@ section {
 
 /* Button zum Schließen des Menüs */
 .overlay.menu button {
+  width: 50px;
+  height: 50px;
   background-color: #fff;
   border: none;
   padding: 4px 10px;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   transition: background-color 0.2s;
 }
 
@@ -161,7 +163,6 @@ section {
   color: #e0e0e0;
 }
 
-/* Sichtbar machen des Menüs */
 .overlay.menu.visible {
   display: flex;
 }
