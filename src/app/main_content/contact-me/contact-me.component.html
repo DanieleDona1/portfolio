@@ -1,47 +1,107 @@
 <section id="contact-me">
+  <h2>Contact me</h2>
 
-  <div class="container">
+  <div class="max-width">
+    <div class="contact-info-container">
+      <span>Let us work together!</span>
+      <p>
+        &copy; &#169;sss Lorem ipsum dolor sit amet consectetur, adipisicing
+        elit. Iusto repudiandae mollitia unde accusamus minus odio deserunt
+        ullam. Atque, inventore cumque exercit quidem odio fugiat vitae,
+        excepturi aspernatur, veritatis reprehenderit quos perferendis
+      </p>
+      <div class="contact-personal-data">
+        <div class="mail-group">
+          <img
+            src="../../../assets/img/contact_me/mail-default.svg"
+            alt="mail"
+          />
+          <a href="mailto:contact@daniele-dona.de">
+            E-mail: contact&#64;daniele-dona.de
+          </a>
+        </div>
+        <div class="phone-group">
+          <img src="../../../assets/img/contact_me/phone.svg" alt="mail" />
+          <a href="tel:+491756930600"> Tel.: 0175 6930600 </a>
+        </div>
+      </div>
+    </div>
+
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <div class="input-group">
+        <div>
+          @if (!name.valid && name.touched && !name.disabled) {
+          <label class="color-red" for="name">Your name is required</label>
+          } @else {
+          <label for="name">Your name</label>
+          }
+          <input
+            #name="ngModel"
+            [(ngModel)]="contactData.name"
+            type="text"
+            id="name"
+            name="name"
+            minlength="1"
+            placeholder="Your name"
+            required
+            [ngClass]="{
+              'border-red': !name.valid && name.touched && !name.disabled
+            }"
+            autocomplete="off"
+          />
+        </div>
 
-      <label for="name">Name</label>
-      <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name.." required>
-
-      <label for="email">Email</label>
-      <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your mail adress.." required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-
-      <label for="message">Subject</label>
-      <textarea #message="ngModel" minlength="2" [(ngModel)]="contactData.message" id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+        <div>
+          @if (!email.valid && email.touched && !email.disabled) {
+          <label class="color-red" for="email">Your Email is required</label>
+          } @else {
+          <label for="email">Your Email</label>
+          }
+          <input
+            #email="ngModel"
+            [(ngModel)]="contactData.email"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            [ngClass]="{
+              'border-red': !email.valid && email.touched && !email.disabled
+            }"
+            autocomplete="off"
+          />
+        </div>
+      </div>
       @if (!message.valid && message.touched && !message.disabled) {
-        <span>Error messaage</span>
+      <label class="color-red" for="message">Your Message is required</label>
+      } @else {
+      <label for="message">Your Message is required</label>
       }
+      <textarea
+        #message="ngModel"
+        minlength="2"
+        [(ngModel)]="contactData.message"
+        id="message"
+        name="message"
+        placeholder="Write something.."
+        style="height: 200px"
+        required
+        [ngClass]="{
+          'border-red': !message.valid && message.touched && !message.disabled
+        }"
+        autocomplete="off"
+      ></textarea>
 
-
-      <input type="submit" value="Submit">
-
+      <input
+        class="input-submit"
+        type="submit"
+        value="Send"
+        [disabled]="!contactForm.valid"
+      />
     </form>
   </div>
-
 </section>
-
-
-<!-- pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- <form class="example-form">
   <mat-form-field class="example-full-width">

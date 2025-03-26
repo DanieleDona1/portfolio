@@ -142,27 +142,25 @@ section {
   flex-direction: row-reverse;
 }
 
-/* CSS-Animation für die Elemente, die von rechts hereinfliegen sollen */
 .slide-in-right {
   opacity: 0;
-  transform: translateX(20%); /* Beginnt außerhalb des Sichtbereichs */
+  transform: translateX(20%);
   transition: transform 1000ms ease-out, opacity 0.6s ease-out;
 }
 
 .slide-in-right.visible {
   opacity: 1;
-  transform: translateX(0); /* Bewegt sich in den sichtbaren Bereich */
+  transform: translateX(0);
 }
 
 .slide-in-left {
   opacity: 0;
-  transform: translateX(-20%); /* Start außerhalb des linken Viewports */
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transform: translateX(-20%);
 }
 
 .slide-in-left.visible {
   opacity: 1;
-  transform: translateX(0); /* In den sichtbaren Bereich bewegen */
+  transform: translateX(0);
 }
 
 @media (max-width: 480px) {

@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-contact-me',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',
 })
@@ -15,6 +16,7 @@ export class ContactMeComponent {
     name: '',
     email: '',
     message: '',
+    privacyPolicy: false
   };
 
   mailTest = true;
