@@ -193,6 +193,7 @@ section {
 
   .skillset {
     justify-content: center;
+    gap: 24px;
   }
 
   .skillset>div>div {
@@ -203,12 +204,12 @@ section {
 
 @media (max-width: 480px) {
   .skillset {
-    gap: 24px;
+    gap: 20px;
+    max-width: 320px;
   }
 
   .skillset img {
-    max-width: 40px;
-    // margin-bottom: px;
+    max-width: 35px;
   }
 
   .skillset img {

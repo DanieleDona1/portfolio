@@ -11,16 +11,14 @@ export class MyProjectsComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    // IntersectionObserver erstellen
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible'); // Sichtbar, also Klasse hinzufügen
+          entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.5 }); // 50% des Elements müssen sichtbar sein
+    }, { threshold: 0.5 });
 
-    // Klassen 'slide-in-right' und 'slide-in-left' überwachen
     const elementsRight = document.querySelectorAll('.slide-in-right');
     const elementsLeft = document.querySelectorAll('.slide-in-left');
 

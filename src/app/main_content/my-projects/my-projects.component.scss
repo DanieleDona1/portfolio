@@ -4,7 +4,7 @@ $text-primary: rgba(248, 245, 236, 1);
 
 section {
   color: $background-secondary;
-  padding-top: 10vh;
+  padding-top: 11vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,7 +91,6 @@ section {
 }
 
 .project-description {
-  // background-image: var(--main-bg-color);
   width: 100%;
   max-width: 512px;
   padding: 24px 16px;
@@ -164,4 +163,12 @@ section {
 .slide-in-left.visible {
   opacity: 1;
   transform: translateX(0); /* In den sichtbaren Bereich bewegen */
+}
+
+@media (max-width: 480px) {
+  .project-group {
+    margin-bottom: 150px;
+    margin-top: 48px;
+  }
+
 }
