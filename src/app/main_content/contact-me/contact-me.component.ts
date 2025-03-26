@@ -50,4 +50,9 @@ export class ContactMeComponent {
       //   ngForm.resetForm();
       // }
       }
+
+
+      sayHello(){
+        console.log('Hello, World!')
+      }
 }
