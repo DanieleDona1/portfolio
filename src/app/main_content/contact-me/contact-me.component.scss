@@ -29,6 +29,7 @@ section {
   gap: 40px;
   color: $text-primary;
   margin-bottom: 40px;
+
   >div {
     flex: 1;
   }
@@ -56,9 +57,9 @@ section {
 
   a {
     align-items: center;
-      transition: color 0.2s ease;
-      text-decoration: none;
-      color: $text-primary;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: $text-primary;
   }
 
   .mail-group {
@@ -102,6 +103,7 @@ section {
 .input-group {
   display: flex;
   gap: 24px;
+
   >div {
     flex: 1;
   }
@@ -149,11 +151,13 @@ input[type=submit]:disabled {
   cursor: not-allowed;
 }
 
-input:hover, textarea:hover {
+input:hover,
+textarea:hover {
   background-color: rgba(137, 188, 217, 0.12);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   background-color: $background-primary;
   border: 1px solid $text-primary;
 }
@@ -168,6 +172,10 @@ input:focus, textarea:focus {
   color: red;
 }
 
+.color-blue {
+  color: $background-secondary;
+}
+
 input.border-red {
   border: 1px solid red;
 }
@@ -176,29 +184,66 @@ textarea.border-red {
   border: 1px solid red;
 }
 
+.privacy-wrapper {
+  position: relative;
 
-
-@media (max-width: 1023px) {
-  .contact-info-container {
-    flex-direction: column-reverse;
-    gap: 30px;
+  input {
+    position: absolute;
+    right: 0;
+    font-size: 1.15rem;
+    width: 112px;
+    height: 50px;
   }
 
-  .contact-personal-data .mail-group {
-    margin-bottom: 8px;
+  input.active {
+    background-color: $background-secondary;
+    transition: background-color 0.3s ease;
+
+    color: $text-primary;
   }
 
-}
+  input.active:hover {
+    background-color: rgb(93, 167, 209);
 
-@media (max-width: 480px) {
+    }
 
-  .contact-info-container {
-    >span {
-      display: inline-block;
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 3px;
-      font-size: 1.4rem;
+  }
+
+
+
+
+  .privacy-policy {
+    color: $text-primary;
+
+    label:hover .checkbox-default {
+      content: url('../../../assets/img/contact_me/checkbox-hover.svg');
+    }
+
+  }
+
+
+
+  @media (max-width: 1023px) {
+    .contact-info-container {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+
+    .contact-personal-data .mail-group {
+      margin-bottom: 8px;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .contact-info-container {
+      >span {
+        display: inline-block;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 3px;
+        font-size: 1.4rem;
+      }
     }
   }
-}

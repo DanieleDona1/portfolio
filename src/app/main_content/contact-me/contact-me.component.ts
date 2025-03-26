@@ -9,14 +9,13 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact-me.component.scss',
 })
 export class ContactMeComponent {
-
-  http = inject(HttpClient)
+  http = inject(HttpClient);
 
   contactData = {
     name: '',
     email: '',
     message: '',
-    privacyPolicy: false
+    privacyPolicy: false,
   };
 
   mailTest = true;
@@ -33,6 +32,13 @@ export class ContactMeComponent {
   };
 
   onSubmit(ngForm: NgForm) {
+    if (ngForm.invalid) {
+      Object.keys(ngForm.controls).forEach((controlName) => {
+        const control = ngForm.controls[controlName];
+        control.markAsTouched();
+      });
+    }
+
     if (ngForm.submitted && ngForm.form.valid) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
@@ -45,14 +51,10 @@ export class ContactMeComponent {
           },
           complete: () => console.info('send post complete'),
         });
-      }
-      // else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      //   ngForm.resetForm();
-      // }
-      }
+    }
+  }
 
-
-      sayHello(){
-        console.log('Hello, World!')
-      }
+  sayHello() {
+    console.log('Hello, World!');
+  }
 }

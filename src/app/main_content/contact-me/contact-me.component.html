@@ -69,6 +69,7 @@
             [ngClass]="{
               'border-red': !email.valid && email.touched && !email.disabled
             }"
+            autocomplete="off"
           />
         </div>
       </div>
@@ -92,56 +93,75 @@
         autocomplete="off"
       ></textarea>
 
-
-      <div class="privacy-policy">
-        <label for="privacyPolicy">
-          <input
-            #privacyPolicy="ngModel"
-            type="checkbox"
-            [(ngModel)]="contactData.privacyPolicy"
-            id="privacyPolicy"
-            name="privacyPolicy"
-            required
-            [ngClass]="{
-              'border-red': !privacyPolicy.valid && privacyPolicy.touched && !privacyPolicy.disabled
-            }"
-            hidden
-          />
-
-          @if (contactData.privacyPolicy) {
+      <div class="privacy-wrapper">
+        <div class="privacy-policy">
+          <label for="privacyPolicy">
+            <input
+              #privacyPolicy="ngModel"
+              type="checkbox"
+              [(ngModel)]="contactData.privacyPolicy"
+              id="privacyPolicy"
+              name="privacyPolicy"
+              required
+              [ngClass]="{
+                'border-red':
+                  !privacyPolicy.valid &&
+                  privacyPolicy.touched &&
+                  !privacyPolicy.disabled
+              }"
+              hidden
+            />
+            @if (!contactData.privacyPolicy && privacyPolicy.touched) {
             <img
-              *ngIf="contactData.privacyPolicy"
+              src="../../../assets/img/contact_me/checkbox-error.svg"
+              alt="error"
+            />
+            <span>
+              I've read the
+              <a
+                class="color-red"
+                href="../../privacy-policy/privacy-policy.component.html"
+                >privacy policy</a
+              >
+              and agree to the processing of my data as outlined
+            </span>
+            <div class="color-red">Please accept the privacy poilicy.</div>
+            } @else if (contactData.privacyPolicy) {
+            <img
               src="../../../assets/img/contact_me/checkbox-checked.svg"
-              alt="Checked"
-              />
-              <span>
-                I've read the
-                <a href="../../privacy-policy/privacy-policy.component.html">privacy policy</a> and agree to the processing of my data as outlined
-              </span>
-          } @else {
+              alt="checked"
+            />
+            <span>
+              I've read the
+              <a
+                class="color-blue"
+                href="../../privacy-policy/privacy-policy.component.html"
+                >privacy policy</a
+              >
+              and agree to the processing of my data as outlined
+            </span>
+            } @else {
             <img
-            *ngIf="!contactData.privacyPolicy"
-            src="../../../assets/img/contact_me/checkbox-default.svg"
-            alt="Unchecked"
-          />
-          <span>
-            I've read the
-            <a href="../../privacy-policy/privacy-policy.component.html">privacy policy</a> and agree to the processing of my data as outlined
-          </span>
-
-          }
-
-        </label>
+              class="checkbox-default"
+              src="../../../assets/img/contact_me/checkbox-default.svg"
+              alt="default"
+            />
+            <span>
+              I've read the
+              <a
+                class="color-blue"
+                href="../../privacy-policy/privacy-policy.component.html"
+                >privacy policy</a
+              >
+              and agree to the processing of my data as outlined
+            </span>
+            }
+          </label>
+        </div>
+        <input class="input-submit" type="submit" value="Send" [ngClass]="{
+          'active': contactForm.valid
+        }"/>
       </div>
-
-
-      <input
-      (click)="sayHello()"
-        class="input-submit"
-        type="submit"
-        value="Send"
-        [disabled]="!contactForm.valid"
-      />
     </form>
   </div>
 </section>
