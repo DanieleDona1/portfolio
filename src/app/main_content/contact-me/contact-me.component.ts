@@ -20,7 +20,7 @@ export class ContactMeComponent {
   mailTest = true;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://portfolio.daniele-dona.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -31,7 +31,7 @@ export class ContactMeComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
@@ -43,8 +43,9 @@ export class ContactMeComponent {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      ngForm.resetForm();
-    }
-  }
+      }
+      // else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      //   ngForm.resetForm();
+      // }
+      }
 }
