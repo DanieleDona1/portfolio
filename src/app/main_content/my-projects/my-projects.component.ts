@@ -14,7 +14,9 @@ export class MyProjectsComponent implements AfterViewInit {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 400);
         }
       });
     }, { threshold: 0.5 });
