@@ -189,7 +189,7 @@ textarea.border-red {
 }
 
 .privacy-wrapper {
-  padding-bottom: 24px;
+  padding-bottom: 60px;
   .submit-container{
     text-align: right;
   }
@@ -318,5 +318,9 @@ textarea.border-red {
       padding-bottom: 3px;
       font-size: 1.4rem;
     }
+  }
+  .input-group {
+    flex-direction: column;
+    gap: 0;
   }
 }

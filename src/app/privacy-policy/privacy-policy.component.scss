@@ -1,0 +1,41 @@
+$background-primary: rgba(38, 46, 52, 1);
+$background-secondary: rgba(137, 188, 217, 1);
+$text-primary: rgba(248, 245, 236, 1);
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 24px clamp(16px, 5vw, 200px);
+  font-size: 20px;
+  color: rgba(248, 245, 236, 1);
+  line-height: 1.3;
+  min-height: 100vh;
+  font-size: clamp(16px, 5vw, 24px);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+  >div {
+    max-width: 1920px;
+  }
+  img{
+    margin-bottom: 16px;
+  }
+
+  img:hover{
+    transform: scale(1.1);
+  }
+
+  h1{
+  font-size: clamp(26px, 5vw, 40px);
+  margin: 24px 0;
+}
+h2{
+  font-size: clamp(20px, 5vw, 24px);
+  margin: 20px 0;
+}
+h3{
+  font-size: clamp(18px, 5vw, 22px);
+  margin: 26px 0;
+  }
+
+}
