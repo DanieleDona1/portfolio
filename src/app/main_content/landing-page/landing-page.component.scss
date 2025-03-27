@@ -63,6 +63,7 @@ section {
 }
 
 .developer-data {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -70,7 +71,6 @@ section {
   align-items: center;
   gap: 48px;
   padding-bottom: 136px;
-
   >a {
     background-image: url('../../../assets/img/landing_page/arrow_down.svg');
     height: 112px;
@@ -83,6 +83,19 @@ section {
 
   &:hover>a {
     background-image: url('../../../assets/img/landing_page/arrow_down_hover.svg');
+  }
+}
+
+.social-media-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: absolute;
+  top: 200px;
+  right: 0px;
+
+  >a:hover{
+    transform: scale(1.12);
   }
 }
 
@@ -124,18 +137,14 @@ section {
   }
 }
 
-// -------------- menu code ------------------
-/* Menüüberlagerung */
 .overlay.menu {
   display: none;
-  /* Standardmäßig versteckt */
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
 }
 
-/* Button zum Schließen des Menüs */
 .overlay.menu button {
   width: 50px;
   height: 50px;
@@ -152,8 +161,6 @@ section {
   }
 }
 
-
-/* Links */
 .overlay.menu a {
   color: $background-primary;
   font-weight: bold;
@@ -219,6 +226,9 @@ section {
 
   .background-image {
     transform: translate(4%, 1px);
+  }
+  .social-media-container {
+    display: none;
   }
 
 }
