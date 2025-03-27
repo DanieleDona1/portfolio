@@ -13,7 +13,6 @@ export class NavbarMobileComponent {
   @Output() displayChanged = new EventEmitter<void>();
 
   changeDisplayFlex() {
-    this.displayChanged.emit(); // Event an die übergeordnete Komponente senden
+    this.displayChanged.emit();
   }
-
 }

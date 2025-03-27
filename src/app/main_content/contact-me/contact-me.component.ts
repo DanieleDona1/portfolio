@@ -32,12 +32,23 @@ export class ContactMeComponent {
     },
   };
 
+  markFormAsTouched(ngForm: NgForm) {
+    Object.keys(ngForm.controls).forEach((controlName) => {
+      const control = ngForm.controls[controlName];
+      control.markAsTouched();
+    });
+  }
+
+  triggerFeedback() {
+    this.isSubmitted = true;
+    setTimeout(() => {
+      this.isSubmitted = false;
+    }, 5000);
+  }
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.invalid) {
-      Object.keys(ngForm.controls).forEach((controlName) => {
-        const control = ngForm.controls[controlName];
-        control.markAsTouched();
-      });
+      this.markFormAsTouched(ngForm);
     }
 
     if (ngForm.submitted && ngForm.form.valid) {
@@ -54,12 +65,5 @@ export class ContactMeComponent {
           complete: () => console.info('send post complete'),
         });
     }
-  }
-
-  triggerFeedback() {
-    this.isSubmitted = true;
-    setTimeout(() => {
-      this.isSubmitted = false;
-    }, 5000);
   }
 }

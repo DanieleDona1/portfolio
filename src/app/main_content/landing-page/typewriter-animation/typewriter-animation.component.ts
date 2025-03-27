@@ -11,7 +11,6 @@ export class TypewriterAnimationComponent implements OnInit {
     'Frontend Developer.',
     'Turning design into code.',
     'Learn. Build. Repeat.',
-    // ' Always learning, always building.',
   ];
   typingSpeed = 150;
   deleteSpeed = 50;
