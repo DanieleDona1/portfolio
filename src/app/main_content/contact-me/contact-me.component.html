@@ -111,21 +111,24 @@
               }"
               hidden
             />
+
             @if (!contactData.privacyPolicy && privacyPolicy.touched) {
             <img
               src="../../../assets/img/contact_me/checkbox-error.svg"
               alt="error"
             />
-            <span>
-              I've read the
-              <a
-                class="color-red"
-                href="../../privacy-policy/privacy-policy.component.html"
-                >privacy policy</a
-              >
-              and agree to the processing of my data as outlined
-            </span>
-            <div class="color-red">Please accept the privacy poilicy.</div>
+              <span>
+                I've read the
+                <a
+                  class="color-red"
+                  href="../../privacy-policy/privacy-policy.component.html"
+                  >privacy policy</a
+                >
+                and agree to the processing of my data as outlined
+                <div class="color-red additional-msg">
+                  Please accept the privacy poilicy.
+                </div>
+              </span>
             } @else if (contactData.privacyPolicy) {
             <img
               src="../../../assets/img/contact_me/checkbox-checked.svg"
@@ -156,6 +159,9 @@
               and agree to the processing of my data as outlined
             </span>
             }
+
+
+
           </label>
         </div>
         <input class="input-submit" type="submit" value="Send" [ngClass]="{
