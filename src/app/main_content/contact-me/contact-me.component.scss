@@ -191,7 +191,10 @@ textarea.border-red {
 .privacy-wrapper {
   padding-bottom: 60px;
   .submit-container{
-    text-align: right;
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
   }
 
   input {
@@ -265,7 +268,7 @@ textarea.border-red {
 }
 
 .feedback-animation {
-  padding: 10px;
+  padding: 14px 10px 12px 10px;
   background-color: #4caf50;
   color: white;
   font-weight: bold;
@@ -273,6 +276,12 @@ textarea.border-red {
   border-radius: 5px;
   animation: fadeInOut 3s;
 }
+
+.feedback-placeholder{
+  padding: 14px 10px 12px 10px;
+  border-radius: 5px;
+}
+
 
 @keyframes fadeInOut {
   0% {

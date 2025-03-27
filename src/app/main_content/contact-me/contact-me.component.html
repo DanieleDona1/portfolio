@@ -5,10 +5,11 @@
     <div class="contact-info-container">
       <span>Let us work together!</span>
       <p>
-        &copy; &#169;sss Lorem ipsum dolor sit amet consectetur, adipisicing
-        elit. Iusto repudiandae mollitia unde accusamus minus odio deserunt
-        ullam. Atque, inventore cumque exercit quidem odio fugiat vitae,
-        excepturi aspernatur, veritatis reprehenderit quos perferendis
+        Got a project in mind? <br><br>
+
+        Feel free to reach out through this form – I’d love to hear about your ideas and how I can contribute to your projects.<br><br>
+        Looking for a Frontend Developer? Let’s talk!
+
       </p>
       <div class="contact-personal-data">
         <div class="mail-group">
@@ -168,6 +169,15 @@
           </label>
         </div>
         <div class="submit-container">
+          @if(isSubmitted){
+            <span class="feedback-animation">
+              Your message has been successfully sent.
+            </span>
+          } @else {
+            <span class="feedback-placeholder opacity-0">
+              Your message has been successfully sent.
+            </span>
+          }
           <input
             class="input-submit"
             type="submit"
@@ -180,9 +190,6 @@
         </div>
       </div>
     </form>
-    <span *ngIf="isSubmitted" class="feedback-animation">
-      Thank you! Your message has been successfully sent.
-    </span>
 
     <div class="scroll-btn-container">
       <a href="#developer">
