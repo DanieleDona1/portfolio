@@ -142,6 +142,9 @@
                 >privacy policy</a
               >
               and agree to the processing of my data as outlined
+              <div class="color-red additional-msg opacity-0">
+                Please accept the privacy poilicy.
+              </div>
             </span>
             } @else {
             <img
@@ -157,23 +160,35 @@
                 >privacy policy</a
               >
               and agree to the processing of my data as outlined
+              <div class="color-red additional-msg opacity-0">
+                Please accept the privacy poilicy.
+              </div>
             </span>
             }
           </label>
         </div>
-        <input
-          class="input-submit"
-          type="submit"
-          value="Send"
-          [ngClass]="{
-            active: contactForm.valid
-          }"
-          [disabled]="isSubmitted"
-        />
+        <div class="submit-container">
+          <input
+            class="input-submit"
+            type="submit"
+            value="Send"
+            [ngClass]="{
+              active: contactForm.valid
+            }"
+            [disabled]="isSubmitted"
+          />
+        </div>
       </div>
     </form>
     <span *ngIf="isSubmitted" class="feedback-animation">
       Thank you! Your message has been successfully sent.
     </span>
+
+    <div class="scroll-btn-container">
+      <a href="#developer">
+        <img src="../../../assets/img/landing_page/arrow-up.svg" alt="arrow-up">
+      </a>
+    </div>
+
   </div>
 </section>

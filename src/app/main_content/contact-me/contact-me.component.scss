@@ -189,11 +189,12 @@ textarea.border-red {
 }
 
 .privacy-wrapper {
-  position: relative;
+  padding-bottom: 24px;
+  .submit-container{
+    text-align: right;
+  }
 
   input {
-    position: absolute;
-    right: 0;
     font-size: 1.15rem;
     width: 112px;
     height: 50px;
@@ -202,7 +203,6 @@ textarea.border-red {
   input.active {
     background-color: $background-secondary;
     transition: background-color 0.3s ease;
-
     color: $text-primary;
   }
 
@@ -212,7 +212,9 @@ textarea.border-red {
   }
 }
 
-
+.opacity-0 {
+  opacity: 0;
+}
 
 
 .privacy-policy {
@@ -234,7 +236,6 @@ textarea.border-red {
 
     &:hover .checkbox-default {
       content: url('../../../assets/img/contact_me/checkbox-hover.svg');
-
     }
 
     span {
@@ -244,6 +245,21 @@ textarea.border-red {
 
     .additional-msg {
       padding-top: 4px;
+    }
+  }
+}
+
+.scroll-btn-container {
+  display: flex;
+  justify-content: center;
+  img {
+    height: 112px;
+    width: 100%;
+    max-width: 40px;
+    transition: background-image 150ms ease-in-out;
+
+    &:hover {
+      content: url('../../../assets/img/landing_page/arrow-up-hover.svg');
     }
   }
 }
@@ -279,7 +295,6 @@ textarea.border-red {
     transform: scale(0.9);
   }
 }
-
 
 @media (max-width: 1023px) {
   .contact-info-container {

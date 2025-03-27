@@ -71,20 +71,21 @@ section {
   align-items: center;
   gap: 48px;
   padding-bottom: 136px;
-  >a {
-    background-image: url('../../../assets/img/landing_page/arrow_down.svg');
+}
+
+.scroll-btn-container {
+  img {
     height: 112px;
     width: 100%;
     max-width: 40px;
-    background-size: contain;
-    background-repeat: no-repeat;
     transition: background-image 150ms ease-in-out;
-  }
 
-  &:hover>a {
-    background-image: url('../../../assets/img/landing_page/arrow_down_hover.svg');
+    &:hover {
+      content: url('../../../assets/img/landing_page/arrow_down_hover.svg');
+    }
   }
 }
+
 
 .social-media-container {
   display: flex;
