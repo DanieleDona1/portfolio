@@ -236,17 +236,50 @@ textarea.border-red {
       content: url('../../../assets/img/contact_me/checkbox-hover.svg');
 
     }
-    span {
-        padding-top: 5px;
-        padding-left: 8px;
-      }
 
-      .additional-msg {
-        padding-top: 4px;
-      }
+    span {
+      padding-top: 5px;
+      padding-left: 8px;
     }
 
+    .additional-msg {
+      padding-top: 4px;
+    }
+  }
 }
+
+.feedback-animation {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  animation: fadeInOut 3s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
 
 @media (max-width: 1023px) {
   .contact-info-container {

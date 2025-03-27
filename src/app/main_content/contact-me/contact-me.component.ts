@@ -9,6 +9,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact-me.component.scss',
 })
 export class ContactMeComponent {
+  isSubmitted = false;
   http = inject(HttpClient);
 
   contactData = {
@@ -45,6 +46,7 @@ export class ContactMeComponent {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.triggerFeedback();
           },
           error: (error) => {
             console.error(error);
@@ -54,7 +56,10 @@ export class ContactMeComponent {
     }
   }
 
-  sayHello() {
-    console.log('Hello, World!');
+  triggerFeedback() {
+    this.isSubmitted = true;
+    setTimeout(() => {
+      this.isSubmitted = false;
+    }, 4000);
   }
 }
