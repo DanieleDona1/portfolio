@@ -117,18 +117,18 @@
               src="../../../assets/img/contact_me/checkbox-error.svg"
               alt="error"
             />
-              <span>
-                I've read the
-                <a
-                  class="color-red"
-                  href="../../privacy-policy/privacy-policy.component.html"
-                  >privacy policy</a
-                >
-                and agree to the processing of my data as outlined
-                <div class="color-red additional-msg">
-                  Please accept the privacy poilicy.
-                </div>
-              </span>
+            <span>
+              I've read the
+              <a
+                class="color-red"
+                href="../../privacy-policy/privacy-policy.component.html"
+                >privacy policy</a
+              >
+              and agree to the processing of my data as outlined
+              <div class="color-red additional-msg">
+                Please accept the privacy poilicy.
+              </div>
+            </span>
             } @else if (contactData.privacyPolicy) {
             <img
               src="../../../assets/img/contact_me/checkbox-checked.svg"
@@ -159,35 +159,21 @@
               and agree to the processing of my data as outlined
             </span>
             }
-
-
-
           </label>
         </div>
-        <input class="input-submit" type="submit" value="Send" [ngClass]="{
-          'active': contactForm.valid
-        }"/>
+        <input
+          class="input-submit"
+          type="submit"
+          value="Send"
+          [ngClass]="{
+            active: contactForm.valid
+          }"
+          [disabled]="isSubmitted"
+        />
       </div>
     </form>
-    <div *ngIf="isSubmitted" class="feedback-animation">
+    <span *ngIf="isSubmitted" class="feedback-animation">
       Thank you! Your message has been successfully sent.
-    </div>
+    </span>
   </div>
 </section>
-
-<!-- <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-           placeholder="Ex. pat@example.com" (blur)="onBlur()">
-    <mat-hint>Errors appear only when focus is lost!</mat-hint>
-
-    <mat-error *ngIf="emailFormControl.touched && emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-      Please enter a valid email address
-    </mat-error>
-
-    <mat-error *ngIf="emailFormControl.touched && emailFormControl.hasError('required')">
-      Email is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-</form> -->

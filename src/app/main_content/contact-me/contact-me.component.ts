@@ -60,6 +60,6 @@ export class ContactMeComponent {
     this.isSubmitted = true;
     setTimeout(() => {
       this.isSubmitted = false;
-    }, 4000);
+    }, 5000);
   }
 }
