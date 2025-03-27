@@ -1,0 +1,22 @@
+$background-primary: rgba(38, 46, 52, 1);
+$background-secondary: rgba(137, 188, 217, 1);
+$text-primary: rgba(248, 245, 236, 1);
+
+section {
+  padding: 24px clamp(16px, 5vw, 200px);
+  font-size: 20px;
+  color: rgba(248, 245, 236, 1);
+  line-height: 1.4;
+  min-height: 70vh;
+    word-wrap: break-word; /* Erlaubt das Umbruchverhalten */
+    white-space: normal;   /* Stellt sicher, dass Text umbricht */
+
+
+  img{
+    margin-bottom: 16px;
+  }
+
+  img:hover{
+    transform: scale(1.1);
+  }
+}
