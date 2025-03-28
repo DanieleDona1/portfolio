@@ -138,6 +138,14 @@ section {
 .bubble-container {
   position: relative;
   text-align: center;
+  .bubble-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    img {
+      padding-top: 12px;
+    }
+  }
 }
 
 .bubble-container:hover > div:nth-of-type(1),
@@ -155,7 +163,7 @@ section {
   background: $background-primary;
   border: 4px solid $text-primary;
   border-radius: 8px;
-  padding: 24px;
+  padding: 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   z-index: 10;
@@ -179,12 +187,7 @@ section {
   display: block;
 }
 
-.bubble-group {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
 
-}
 
 .lets-talk-container {
   a{
@@ -272,6 +275,10 @@ section {
 
   .focus-container {
     padding: 20px;
+    .text {
+      max-width: 210px;
+      line-height: 1.2;
+    }
   }
 
   .skillset {

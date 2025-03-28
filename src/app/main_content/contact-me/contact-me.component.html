@@ -1,25 +1,25 @@
 <section id="contact-me">
-  <h2>Contact me</h2>
+  <h2>{{ 'CONTACT_ME.TITLE' | translate }}</h2>
 
   <div class="max-width">
     <div class="contact-info-container">
-      <span>Let us work together!</span>
-      <p>
-        Got a project in mind? <br><br>
+      <span>{{ 'CONTACT_ME.INVITATION' | translate }}</span>
+      <div class="form-description">
+        <h3>{{ 'CONTACT_ME.CLIENT_QUESTION' | translate }}</h3>
+        <p>{{ 'CONTACT_ME.DESCRIPTION' | translate }}</p>
+      </div>
 
-        Feel free to reach out through this form – I’d love to hear about your ideas and how I can contribute to your projects.<br><br>
-        Looking for a Frontend Developer? Let’s talk!
-
-      </p>
       <div class="contact-personal-data">
         <div class="mail-group">
           <img
             src="../../../assets/img/contact_me/mail-default.svg"
             alt="mail"
-          />
-          <a href="mailto:contact@daniele-dona.de">
-            E-mail: contact&#64;daniele-dona.de
-          </a>
+          /> <div class="email-container">
+            E-mail:
+            <a href="mailto:contact@daniele-dona.de">
+               contact&#64;daniele-dona.de
+            </a>
+          </div>
         </div>
         <div class="phone-group">
           <img src="../../../assets/img/contact_me/phone.svg" alt="mail" />
@@ -32,9 +32,9 @@
       <div class="input-group">
         <div>
           @if (!name.valid && name.touched && !name.disabled) {
-          <label class="color-red" for="name">Your name is required</label>
+            <label class="color-red" for="name">{{ 'FORM_FIELDS.ERRORS.NAME_REQUIRED' | translate }}</label>
           } @else {
-          <label for="name">Your name</label>
+            <label for="name">{{ 'FORM_FIELDS.LABELS.NAME' | translate }}</label>
           }
           <input
             #name="ngModel"
@@ -43,7 +43,7 @@
             id="name"
             name="name"
             minlength="1"
-            placeholder="Your name"
+            [placeholder]="'FORM_FIELDS.PLACEHOLDERS.NAME' | translate"
             required
             [ngClass]="{
               'border-red': !name.valid && name.touched && !name.disabled
@@ -54,9 +54,9 @@
 
         <div>
           @if (!email.valid && email.touched && !email.disabled) {
-          <label class="color-red" for="email">Your Email is required</label>
+            <label class="color-red" for="email">{{ 'FORM_FIELDS.ERRORS.EMAIL_REQUIRED' | translate }}</label>
           } @else {
-          <label for="email">Your Email</label>
+            <label for="email">{{ 'FORM_FIELDS.LABELS.EMAIL' | translate }}</label>
           }
           <input
             #email="ngModel"
@@ -64,7 +64,7 @@
             type="email"
             id="email"
             name="email"
-            placeholder="Your email"
+            [placeholder]="'FORM_FIELDS.PLACEHOLDERS.EMAIL' | translate"
             required
             pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
             [ngClass]="{
@@ -74,10 +74,11 @@
           />
         </div>
       </div>
+
       @if (!message.valid && message.touched && !message.disabled) {
-      <label class="color-red" for="message">Your Message is required</label>
+        <label class="color-red" for="message">{{ 'FORM_FIELDS.ERRORS.MESSAGE_REQUIRED' | translate }}</label>
       } @else {
-      <label for="message">Your Message is required</label>
+        <label for="message">{{ 'FORM_FIELDS.LABELS.MESSAGE' | translate }}</label>
       }
       <textarea
         #message="ngModel"
@@ -85,7 +86,7 @@
         [(ngModel)]="contactData.message"
         id="message"
         name="message"
-        placeholder="Write something.."
+        [placeholder]="'FORM_FIELDS.PLACEHOLDERS.MESSAGE' | translate"
         style="height: 200px"
         required
         [ngClass]="{
@@ -114,74 +115,55 @@
             />
 
             @if (!contactData.privacyPolicy && privacyPolicy.touched) {
-            <img
-              src="../../../assets/img/contact_me/checkbox-error.svg"
-              alt="error"
-            />
-            <span>
-              I've read the
-              <a
-                class="color-red"
-                [routerLink]="['/privacy-policy']"
-                >privacy policy</a
-              >
-              and agree to the processing of my data as outlined
-              <div class="color-red additional-msg">
-                Please accept the privacy poilicy.
-              </div>
-            </span>
+              <img src="../../../assets/img/contact_me/checkbox-error.svg" alt="error" />
+              <span>
+                {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
+                <a class="color-red" [routerLink]="['/privacy-policy']">
+                  {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
+                </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
+                <div class="color-red additional-msg">
+                  {{ 'FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED' | translate }}
+                </div>
+              </span>
             } @else if (contactData.privacyPolicy) {
-            <img
-              src="../../../assets/img/contact_me/checkbox-checked.svg"
-              alt="checked"
-            />
-            <span>
-              I've read the
-              <a
-                class="color-blue"
-                [routerLink]="['/privacy-policy']"
-                >privacy policy</a
-              >
-              and agree to the processing of my data as outlined
-              <div class="color-red additional-msg opacity-0">
-                Please accept the privacy poilicy.
-              </div>
-            </span>
+              <img src="../../../assets/img/contact_me/checkbox-checked.svg" alt="checked" />
+              <span>
+                {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
+                <a class="color-blue" [routerLink]="['/privacy-policy']">
+                  {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
+                </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
+                <div class="color-red additional-msg opacity-0">
+                  {{ 'FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED' | translate }}
+                </div>
+              </span>
             } @else {
-            <img
-              class="checkbox-default"
-              src="../../../assets/img/contact_me/checkbox-default.svg"
-              alt="default"
-            />
-            <span>
-              I've read the
-              <a
-                class="color-blue"
-                [routerLink]="['/privacy-policy']"
-                >privacy policy</a
-              >
-              and agree to the processing of my data as outlined
-              <div class="color-red additional-msg opacity-0">
-                Please accept the privacy poilicy.
-              </div>
-            </span>
+              <img class="checkbox-default" src="../../../assets/img/contact_me/checkbox-default.svg" alt="default" />
+              <span>
+                {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
+                <a class="color-blue" [routerLink]="['/privacy-policy']">
+                  {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
+                </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
+                <div class="color-red additional-msg opacity-0">
+                  {{ 'FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED' | translate }}
+                </div>
+              </span>
             }
           </label>
         </div>
         <div class="submit-container">
           @if(isSubmitted){
             <span class="feedback-animation">
-              Your message has been successfully sent.
+              {{ 'FORM_FIELDS.SUCCESS.MESSAGE_SENT' | translate }}
             </span>
           } @else {
             <span class="feedback-placeholder opacity-0">
-              Your message has been successfully sent.
+              {{ 'FORM_FIELDS.SUCCESS.MESSAGE_SENT' | translate }}
             </span>
           }
           <input
             class="input-submit"
             type="submit"
-            value="Send"
+            [value]="'FORM_FIELDS.BUTTONS.SEND' | translate"
             [ngClass]="{
               active: contactForm.valid
             }"

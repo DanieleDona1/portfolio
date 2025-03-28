@@ -37,14 +37,38 @@
   },
   "CONTACT_ME": {
     "TITLE": "Kontaktiere mich",
-    "DESCRIPTION": "Haben Sie ein Projekt im Sinn? Nehmen Sie gerne über dieses Formular Kontakt auf – ich freue mich darauf, mehr über Ihre Ideen zu erfahren und zu sehen, wie ich Ihre Projekte unterstützen kann.",
+    "CLIENT_QUESTION": "Haben Sie ein Projekt im Sinn?",
+    "DESCRIPTION": "Nehmen Sie gerne über dieses Formular Kontakt auf – ich freue mich darauf, mehr über Ihre Ideen zu erfahren und zu sehen, wie ich Ihre Projekte unterstützen kann.",
+    "INVITATION": "Lass uns reden!",
     "BUTTON": "Lass uns reden"
   },
-  "FORM_FIELDS": {
-    "NAME": "Ihr Name",
-    "EMAIL": "Ihre Email",
-    "MESSAGE": "Ihre Nachricht"
-  },
+    "FORM_FIELDS": {
+      "LABELS": {
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "MESSAGE": "Nachricht",
+        "PRIVACY_POLICY": "Ich habe die ",
+        "PRIVACY_POLICY_LINK": "Datenschutzerklärung",
+        "PRIVACY_POLICY_END": " gelesen und stimme der Verarbeitung meiner Daten zu."
+      },
+      "PLACEHOLDERS": {
+        "NAME": "Ihr Name",
+        "EMAIL": "Ihre Email",
+        "MESSAGE": "Ihre Nachricht"
+      },
+      "ERRORS": {
+        "NAME_REQUIRED": "Der Name ist erforderlich",
+        "EMAIL_REQUIRED": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "MESSAGE_REQUIRED": "Die Nachricht darf nicht leer sein",
+        "PRIVACY_POLICY_REQUIRED": "Bitte akzeptieren Sie die Datenschutzerklärung"
+      },
+      "SUCCESS": {
+        "MESSAGE_SENT": "Ihre Nachricht wurde erfolgreich gesendet."
+      },
+      "BUTTONS": {
+        "SEND": "Senden"
+      }
+    },
   "ERRORS": {
     "NAME_REQUIRED": "Der Name ist erforderlich.",
     "EMAIL_REQUIRED": "Die E-Mail-Adresse ist erforderlich.",

@@ -10,7 +10,12 @@ section {
   color: rgba(248, 245, 236, 1);
   line-height: 1.4;
   min-height: 100vh;
-  word-wrap: break-word; /* Erlaubt das Umbruchverhalten */
+  word-wrap: break-word;
+
+  a {
+    text-decoration: none;
+    color: rgba(248, 245, 236, 1);
+  }
 
   >div {
     max-width: 1920px;
@@ -21,5 +26,12 @@ section {
 
   img:hover{
     transform: scale(1.1);
+  }
+
+  h1 {
+    color: rgba(137, 188, 217, 1);
+  }
+  h2 {
+    color: rgba(137, 188, 217, 1);
   }
 }
