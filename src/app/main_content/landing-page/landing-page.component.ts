@@ -3,9 +3,11 @@ import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { TypewriterAnimationComponent } from './typewriter-animation/typewriter-animation.component';
+import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-landing-page',
-  imports: [ NavbarMobileComponent, MatIconModule, MatButtonModule, TypewriterAnimationComponent ],
+  imports: [ NavbarMobileComponent, MatIconModule, MatButtonModule, TypewriterAnimationComponent, TranslateModule ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })

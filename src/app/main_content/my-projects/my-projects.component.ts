@@ -1,8 +1,9 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-projects',
-  imports: [],
+  imports: [ TranslateModule ],
   templateUrl: './my-projects.component.html',
   styleUrl: './my-projects.component.scss'
 })
