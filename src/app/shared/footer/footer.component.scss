@@ -52,6 +52,7 @@ footer {
     justify-content: center;
     text-decoration: none;
     padding: 12px;
+    transform: translateX(-50%);
 
     >img {
       width: 50px;
@@ -98,5 +99,9 @@ footer {
 
   .social-media-container {
     padding: 12px;
+  }
+
+  .author-badge {
+    transform: none;
   }
 }

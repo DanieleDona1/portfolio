@@ -14,10 +14,9 @@ section {
 .image-wrapper {
   position: relative;
   display: grid;
-  max-width: 600px;
-  // margin: 0 auto;
+  max-width: 780px;
   width: 100%;
-  transition: background-image 150ms ease-in-out;
+  transition: background-image .15s ease-in-out;
 
   &:hover .background-image {
     background-image: url('../../../assets/img/landing_page/background_hover.svg');
@@ -233,10 +232,16 @@ section {
   }
 
 }
+@media (max-width: 1200px) {
+  .developer-data {
+    padding-bottom: 112px;
+}
+}
 
 @media (max-width: 720px) {
   .developer-data {
     gap: 10px;
+    padding-bottom: 32px;
 
     >a {
       max-width: 32px;
