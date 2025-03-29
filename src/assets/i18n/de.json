@@ -80,13 +80,13 @@
     "TITLE": "Impressum",
     "LEGAL_NOTICE": "Angaben gemäß § 5 DDG",
     "ADDRESS": {
-      "NAME": "Daniel D",
-      "STREET": "Hans-Thoma-Platz",
+      "NAME": "Daniele Dona",
+      "STREET": "Hans-Thoma-Platz 30",
       "CITY": "69121 Heidelberg"
     },
     "CONTACT": {
       "TITLE": "Contact:",
-      "PHONE": "Tel: +49 175 693060",
+      "PHONE": "Tel: +49 175 6930600",
       "EMAIL": "E-Mail:",
       "EMAIL_LINK": "contact@daniele-dona.de"
     },
@@ -174,10 +174,10 @@
     "RESPONSIBLE": {
       "TITLE": "Verantwortlicher",
       "CONTENT": [
-        "Daniel D",
-        "Hans-Thoma-Platz",
+        "Daniele Dona",
+        "Hans-Thoma-Platz 30",
         "69121 Heidelberg",
-        "E-Mail-Adresse: contact@daniel-dona.de"
+        "E-Mail-Adresse: contact@daniele-dona.de"
       ]
     },
     "OVERVIEW": {

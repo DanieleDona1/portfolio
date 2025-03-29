@@ -23,9 +23,9 @@ export class WhyMeComponent implements OnInit{
   ];
 
   private images = [
-    "../../../assets/img/why_me/location_icon.svg",
-    "../../../assets/img/why_me/remote_icon.svg",
-    "../../../assets/img/why_me/relocate_icon.svg"
+    "assets/img/why_me/location_icon.svg",
+    "assets/img/why_me/remote_icon.svg",
+    "assets/img/why_me/relocate_icon.svg"
   ];
 
   currentText = '';
