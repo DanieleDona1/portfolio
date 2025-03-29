@@ -77,10 +77,6 @@ h2 {
   }
 }
 
-.highlighter {
-  color: $background-secondary;
-}
-
 @media (max-width: 1023px) {
   .why-me-container {
     flex-direction: column;
@@ -101,5 +97,60 @@ h2 {
     button {
       display: none;
     }
+  }
+}
+
+.typewriter-container {
+  // background-color: red;
+  display: flex;
+  width: 370px;
+
+  img {
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    // margin-right: 50px;
+  }
+}
+
+.typewriter {
+  // background-color: aqua;
+  font-size: 1.7rem;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .highlighter {
+    color: $background-secondary;
+  }
+
+  .cursor {
+    animation: blink 0.8s infinite;
+    font-weight: 900;
+    font-size: 30px;
+    color: rgba(137, 188, 217, 1);
+  }
+
+  .dynamic-text {
+    font-size: 24px;
+    padding: 4px;
+
+
+  }
+}
+
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
   }
 }

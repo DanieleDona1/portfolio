@@ -2,13 +2,12 @@ import { Component, ViewChild, ElementRef, Renderer2, inject } from '@angular/co
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { TypewriterAnimationComponent } from './typewriter-animation/typewriter-animation.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ NavbarMobileComponent, MatIconModule, MatButtonModule, TypewriterAnimationComponent, TranslateModule, CommonModule ],
+  imports: [ NavbarMobileComponent, MatIconModule, MatButtonModule, TranslateModule, CommonModule ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })

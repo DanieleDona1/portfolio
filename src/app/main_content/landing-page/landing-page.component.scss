@@ -70,6 +70,11 @@ section {
   align-items: center;
   gap: 48px;
   padding-bottom: 136px;
+
+  h2 {
+    font-size: clamp(1.55rem, 2.7vw, 3rem);
+    margin-top: 16px;
+  }
 }
 
 .scroll-btn-container {
@@ -133,7 +138,7 @@ section {
   >h1 {
     font-size: 6rem;
     white-space: nowrap;
-    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    font-size: clamp(2.6rem, 5vw, 5rem);
   }
 }
 
