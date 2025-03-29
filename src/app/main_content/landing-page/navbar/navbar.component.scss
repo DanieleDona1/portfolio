@@ -70,21 +70,23 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  cursor: pointer;
 
-  >div:first-child {
-    width: 30px;
-    height: 20px;
-    background-image: url('../../../../assets/img/navbar/de.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+  img:first-child:hover {
+    content: url('../../../../assets/img/navbar/de_hover.svg');
+    transform: scale(1.1);
   }
 
-  >div:nth-child(2) {
-    width: 30px;
-    height: 20px;
-    background-image: url('../../../../assets/img/navbar/en.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+  img:nth-child(2):hover {
+    content: url('../../../../assets/img/navbar/en_hover.svg');
+    transform: scale(1.1);
+
+  }
+
+  img.active {
+    padding: 6px;
+    background-color: rgba(38, 46, 52, 0.2);
+    border-radius: 4px;
   }
 }
 

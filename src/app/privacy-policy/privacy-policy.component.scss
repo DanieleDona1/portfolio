@@ -17,25 +17,31 @@ section {
   >div {
     max-width: 1920px;
   }
-  img{
+
+  img {
     margin-bottom: 16px;
   }
 
-  img:hover{
+  img:hover {
     transform: scale(1.1);
   }
 
-  h1{
-  font-size: clamp(26px, 5vw, 40px);
-  margin: 24px 0;
-}
-h2{
-  font-size: clamp(20px, 5vw, 24px);
-  margin: 20px 0;
-}
-h3{
-  font-size: clamp(18px, 5vw, 22px);
-  margin: 26px 0;
+  h1 {
+    font-size: clamp(26px, 5vw, 40px);
+    margin: 24px 0;
+    color: rgba(137, 188, 217, 1);
+  }
+
+  h2 {
+    font-size: clamp(20px, 5vw, 24px);
+    margin: 20px 0;
+    color: rgba(137, 188, 217, 1);
+  }
+
+  h3 {
+    font-size: clamp(18px, 5vw, 22px);
+    margin: 26px 0;
+    color: rgba(137, 188, 217, 1);
   }
 
 }

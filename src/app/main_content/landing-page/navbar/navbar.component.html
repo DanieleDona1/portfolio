@@ -6,15 +6,25 @@
       <span>developer</span>
     </a>
     <div class="navigation-container">
-      <a href="#about-me">{{'NAVBAR.ABOUTME'  | translate}}</a>
-      <a href="#my-skills">{{'NAVBAR.SKILLS'  | translate}}</a>
-      <a href="#my-projects">{{'NAVBAR.PROJECTS'  | translate}}</a>
-      <a href="#contact-me">{{'NAVBAR.CONTACT'  | translate}}</a>
+      <a href="#about-me">{{ "NAVBAR.ABOUTME" | translate }}</a>
+      <a href="#my-skills">{{ "NAVBAR.SKILLS" | translate }}</a>
+      <a href="#my-projects">{{ "NAVBAR.PROJECTS" | translate }}</a>
+      <a href="#contact-me">{{ "NAVBAR.CONTACT" | translate }}</a>
     </div>
-    <!-- <div class="d-none"> -->
+    
     <div class="language-container">
-      <div class="d-none"></div>
-      <div class="d-none"></div>
+      <img
+        (click)="translateWebsite('de')"
+        [src]="deImageSrc"
+        alt="de-language"
+        [ngClass]="{'active': isActive('de')}"
+      />
+      <img
+        (click)="translateWebsite('en')"
+        [src]="enImageSrc"
+        alt="en-language"
+        [ngClass]="{'active': isActive('en')}"
+      />
     </div>
   </div>
 </nav>
