@@ -118,7 +118,8 @@
               <img src="../../../assets/img/contact_me/checkbox-error.svg" alt="error" />
               <span>
                 {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
-                <a class="color-red" [routerLink]="['/privacy-policy']">
+                <a class="color-red" [routerLink]="['/privacy-policy']" [fragment]="'privacy-section'">
+
                   {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
                 </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
                 <div class="color-red additional-msg">
