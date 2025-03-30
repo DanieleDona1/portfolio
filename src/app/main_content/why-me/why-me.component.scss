@@ -103,14 +103,16 @@ h2 {
 .typewriter-container {
   // background-color: red;
   display: flex;
-  width: 370px;
+  width: 100%;
+  max-width: 300px;
 
   img {
     margin-right: 8px;
     vertical-align: middle;
     width: 60px;
     height: 60px;
-    // margin-right: 50px;
+    width: clamp(50px, 5vw, 60px);
+    height: clamp(50px, 5vw, 60px);
   }
 }
 
@@ -125,6 +127,7 @@ h2 {
 
   .highlighter {
     color: $background-secondary;
+    font-size: clamp(16px, 5vw, 24px);
   }
 
   .cursor {
@@ -135,16 +138,11 @@ h2 {
   }
 
   .dynamic-text {
-    font-size: 24px;
-    padding: 4px;
-
-
+    font-size: clamp(16px, 5vw, 24px);
   }
 }
 
-
 @keyframes blink {
-
   0%,
   100% {
     opacity: 1;
