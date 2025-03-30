@@ -16,13 +16,13 @@
           (click)="translateWebsite('de')"
           [src]="deImageSrc"
           alt="de-language"
-          [ngClass]="{'active': isActive('de')}"
+          [ngClass]="{'active': isDeActive}"
         />
         <img
           (click)="translateWebsite('en')"
           [src]="enImageSrc"
           alt="en-language"
-          [ngClass]="{'active': isActive('en')}"
+          [ngClass]="{'active': isEnActive}"
         />
       </div>
     </div>

@@ -1,11 +1,17 @@
-import { Component, ViewChild, ElementRef, Renderer2, inject } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  inject,
+} from '@angular/core';
 import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ NavbarMobileComponent, TranslateModule, CommonModule ],
+  imports: [NavbarMobileComponent, TranslateModule, CommonModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
@@ -21,31 +27,24 @@ export class LandingPageComponent {
     const profilPhoto = this.profilPhoto.nativeElement;
     if (this.isMenuVisible) {
       menuElement.style.display = 'none';
-      profilPhoto.style.opacity = '1'
+      profilPhoto.style.opacity = '1';
       this.isMenuVisible = false;
     } else {
       menuElement.style.display = 'flex';
-      profilPhoto.style.opacity = '0'
+      profilPhoto.style.opacity = '0';
       this.isMenuVisible = true;
     }
   }
 
-
   deImageSrc = '../../../../assets/img/navbar/de.svg';
   enImageSrc = '../../../../assets/img/navbar/en.svg';
 
-  activeLanguage: string = '';
-
-  ngOnInit(): void {
-    this.setInitialLanguage();
-  }
-
-  setInitialLanguage(): void {
-    this.changeLanguageImg(this.activeLanguage);
-  }
+  isDeActive: boolean = false;
+  isEnActive: boolean = true;
 
   changeLanguageImg(language: string): void {
-    this.activeLanguage = language;
+    this.isDeActive = language === 'de';
+    this.isEnActive = language === 'en';
 
     if (language === 'de') {
       this.deImageSrc = '../../../../assets/img/navbar/de-active.svg';
@@ -56,16 +55,9 @@ export class LandingPageComponent {
     }
   }
 
-  isActive(language: string): boolean {
-    return this.activeLanguage === language;
-  }
-
   translate: TranslateService = inject(TranslateService);
   translateWebsite(language: string) {
     this.translate.use(language);
     this.changeLanguageImg(language);
   }
-
-
-
 }
