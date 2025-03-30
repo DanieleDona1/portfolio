@@ -2,12 +2,6 @@ $background-primary: rgba(38, 46, 52, 1);
 $background-secondary: rgba(137, 188, 217, 1);
 $text-primary: rgba(248, 245, 236, 1);
 
-@mixin d-flex($jc, $ai) {
-  display: flex;
-  justify-content: $jc;
-  align-items: $ai;
-}
-
 section {
   color: $background-secondary;
   padding-top: 12vh !important;
