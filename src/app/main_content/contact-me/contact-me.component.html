@@ -1,12 +1,12 @@
 <section id="contact-me">
-  <h2>{{ 'CONTACT_ME.TITLE' | translate }}</h2>
+  <h2>{{ "CONTACT_ME.TITLE" | translate }}</h2>
 
   <div class="max-width">
     <div class="contact-info-container">
-      <span>{{ 'CONTACT_ME.INVITATION' | translate }}</span>
+      <span>{{ "CONTACT_ME.INVITATION" | translate }}</span>
       <div class="form-description">
-        <h3>{{ 'CONTACT_ME.CLIENT_QUESTION' | translate }}</h3>
-        <p>{{ 'CONTACT_ME.DESCRIPTION' | translate }}</p>
+        <h3>{{ "CONTACT_ME.CLIENT_QUESTION" | translate }}</h3>
+        <p>{{ "CONTACT_ME.DESCRIPTION" | translate }}</p>
       </div>
 
       <div class="contact-personal-data">
@@ -14,10 +14,11 @@
           <img
             src="../../../assets/img/contact_me/mail-default.svg"
             alt="mail"
-          /> <div class="email-container">
+          />
+          <div class="email-container">
             E-mail:
             <a href="mailto:contact@daniele-dona.de">
-               contact&#64;daniele-dona.de
+              contact&#64;daniele-dona.de
             </a>
           </div>
         </div>
@@ -32,9 +33,11 @@
       <div class="input-group">
         <div>
           @if (!name.valid && name.touched && !name.disabled) {
-            <label class="color-red" for="name">{{ 'FORM_FIELDS.ERRORS.NAME_REQUIRED' | translate }}</label>
+          <label class="color-red" for="name">{{
+            "FORM_FIELDS.ERRORS.NAME_REQUIRED" | translate
+          }}</label>
           } @else {
-            <label for="name">{{ 'FORM_FIELDS.LABELS.NAME' | translate }}</label>
+          <label for="name">{{ "FORM_FIELDS.LABELS.NAME" | translate }}</label>
           }
           <input
             #name="ngModel"
@@ -54,9 +57,13 @@
 
         <div>
           @if (!email.valid && email.touched && !email.disabled) {
-            <label class="color-red" for="email">{{ 'FORM_FIELDS.ERRORS.EMAIL_REQUIRED' | translate }}</label>
+          <label class="color-red" for="email">{{
+            "FORM_FIELDS.ERRORS.EMAIL_REQUIRED" | translate
+          }}</label>
           } @else {
-            <label for="email">{{ 'FORM_FIELDS.LABELS.EMAIL' | translate }}</label>
+          <label for="email">{{
+            "FORM_FIELDS.LABELS.EMAIL" | translate
+          }}</label>
           }
           <input
             #email="ngModel"
@@ -76,9 +83,13 @@
       </div>
 
       @if (!message.valid && message.touched && !message.disabled) {
-        <label class="color-red" for="message">{{ 'FORM_FIELDS.ERRORS.MESSAGE_REQUIRED' | translate }}</label>
+      <label class="color-red" for="message">{{
+        "FORM_FIELDS.ERRORS.MESSAGE_REQUIRED" | translate
+      }}</label>
       } @else {
-        <label for="message">{{ 'FORM_FIELDS.LABELS.MESSAGE' | translate }}</label>
+      <label for="message">{{
+        "FORM_FIELDS.LABELS.MESSAGE" | translate
+      }}</label>
       }
       <textarea
         #message="ngModel"
@@ -115,52 +126,69 @@
             />
 
             @if (!contactData.privacyPolicy && privacyPolicy.touched) {
-              <img src="../../../assets/img/contact_me/checkbox-error.svg" alt="error" />
-              <span>
-                {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
-                <a class="color-red" [routerLink]="['/privacy-policy']" [fragment]="'privacy-section'">
-
-                  {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
-                </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
-                <div class="color-red additional-msg">
-                  {{ 'FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED' | translate }}
-                </div>
-              </span>
+            <img
+              src="../../../assets/img/contact_me/checkbox-error.svg"
+              alt="error"
+            />
+            <span>
+              {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY" | translate }}
+              <a
+                class="color-red"
+                [routerLink]="['/privacy-policy']"
+                [fragment]="'privacy-section'"
+              >
+                {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK" | translate }}
+              </a>
+              {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY_END" | translate }}
+            </span>
             } @else if (contactData.privacyPolicy) {
-              <img src="../../../assets/img/contact_me/checkbox-checked.svg" alt="checked" />
-              <span>
-                {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
-                <a class="color-blue" [routerLink]="['/privacy-policy']">
-                  {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
-                </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
-                <div class="color-red additional-msg opacity-0">
-                  {{ 'FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED' | translate }}
-                </div>
-              </span>
+            <img
+              src="../../../assets/img/contact_me/checkbox-checked.svg"
+              alt="checked"
+            />
+            <span>
+              {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY" | translate }}
+              <a class="color-blue" [routerLink]="['/privacy-policy']">
+                {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK" | translate }}
+              </a>
+              {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY_END" | translate }}
+            </span>
             } @else {
-              <img class="checkbox-default" src="../../../assets/img/contact_me/checkbox-default.svg" alt="default" />
-              <span>
-                {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY' | translate }}
-                <a class="color-blue" [routerLink]="['/privacy-policy']">
-                  {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK' | translate }}
-                </a> {{ 'FORM_FIELDS.LABELS.PRIVACY_POLICY_END' | translate }}
-                <div class="color-red additional-msg opacity-0">
-                  {{ 'FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED' | translate }}
-                </div>
-              </span>
+            <img
+              class="checkbox-default"
+              src="../../../assets/img/contact_me/checkbox-default.svg"
+              alt="default"
+            />
+            <span>
+              {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY" | translate }}
+              <a class="color-blue" [routerLink]="['/privacy-policy']">
+                {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY_LINK" | translate }}
+              </a>
+              {{ "FORM_FIELDS.LABELS.PRIVACY_POLICY_END" | translate }}
+            </span>
             }
           </label>
+          <div
+            class="color-red additional-msg opacity-0"
+            [ngClass]="{
+              'opacity-1':
+                (!contactData.privacyPolicy && privacyPolicy.touched) ||
+                (isSubmitted && contactData.privacyPolicy)
+            }"
+          >
+            {{ "FORM_FIELDS.ERRORS.PRIVACY_POLICY_REQUIRED" | translate }}
+          </div>
         </div>
         <div class="submit-container">
-          @if(isSubmitted){
-            <span class="feedback-animation">
-              {{ 'FORM_FIELDS.SUCCESS.MESSAGE_SENT' | translate }}
-            </span>
-          } @else {
-            <span class="feedback-placeholder opacity-0">
-              {{ 'FORM_FIELDS.SUCCESS.MESSAGE_SENT' | translate }}
-            </span>
-          }
+          <span
+            class="opacity-0"
+            [ngClass]="{
+              'feedback-animation': isSubmitted,
+              'opacity-1': isSubmitted
+            }"
+          >
+            {{ "FORM_FIELDS.SUCCESS.MESSAGE_SENT" | translate }}
+          </span>
           <input
             class="input-submit"
             type="submit"
@@ -176,9 +204,11 @@
 
     <div class="scroll-btn-container">
       <a href="#developer">
-        <img src="../../../assets/img/landing_page/arrow-up.svg" alt="arrow-up">
+        <img
+          src="../../../assets/img/landing_page/arrow-up.svg"
+          alt="arrow-up"
+        />
       </a>
     </div>
-
   </div>
 </section>

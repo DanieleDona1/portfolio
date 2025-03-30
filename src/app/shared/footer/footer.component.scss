@@ -1,16 +1,18 @@
-footer {
+@mixin d-flex($jc:center, $ai:center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+footer {
+  @include d-flex($jc:center, $ai:center);
   background-color: rgba(137, 188, 217, 1);
   box-sizing: border-box;
   margin-top: 56px;
 }
 
 .footer-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include d-flex($jc:space-between, $ai:center);
   flex-wrap: wrap;
   width: 100%;
   max-width: 1920px;
@@ -72,9 +74,7 @@ footer {
 }
 
 .social-media-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include d-flex($jc:space-between, $ai:center);
   gap: 20px;
   padding: 12px;
 
@@ -92,7 +92,6 @@ footer {
   .footer-wrapper {
     flex-direction: column-reverse;
     padding: 1rem 3rem;
-
 
     .legal-link {
       align-items: center;
