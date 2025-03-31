@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-header',
   imports: [TranslateModule, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
   deImageSrc = '../../assets/img/navbar/de.svg';
@@ -47,6 +47,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) {}
 
+  scrollToTopInstant() {
+    window.scrollTo(0, 0);
+  }
   getHeaderStyles() {
     const isImprint: boolean = this.router.url.includes('/imprint');
     const isPrivacy: boolean = this.router.url.includes('/privacy-policy');
@@ -54,6 +57,7 @@ export class HeaderComponent implements OnInit {
 
     if (isImprint || isPrivacy) {
       styles['display'] = 'flex';
+      this.scrollToTopInstant();
     } else {
       styles['display'] = 'none';
     }
