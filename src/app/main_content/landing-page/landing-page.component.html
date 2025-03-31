@@ -5,31 +5,35 @@
     <div class="overlay profile-photo" #profilPhoto></div>
     <div class="overlay menu" #menuList>
       <button (click)="toggleMenu()">
-        <img src="../../../assets/img/navbar/close.svg" alt="close">
+        <img src="../../../assets/img/navbar/close.svg" alt="close" />
       </button>
-      <a href="#about-me">{{'NAVBAR.ABOUTME'  | translate}}</a>
-      <a href="#my-skills">{{'NAVBAR.SKILLS'  | translate}}</a>
-      <a href="#my-projects">{{'NAVBAR.PROJECTS'  | translate}}</a>
-      <a href="#contact-me">{{'NAVBAR.CONTACT'  | translate}}</a>
+      <a href="#about-me">{{ "NAVBAR.ABOUTME" | translate }}</a>
+      <a href="#my-skills">{{ "NAVBAR.SKILLS" | translate }}</a>
+      <a href="#my-projects">{{ "NAVBAR.PROJECTS" | translate }}</a>
+      <a href="#contact-me">{{ "NAVBAR.CONTACT" | translate }}</a>
       <div class="language-container">
         <img
           (click)="translateWebsite('de')"
           [src]="deImageSrc"
           alt="de-language"
-          [ngClass]="{'active': isDeActive}"
+          [ngClass]="{ active: isDeActive }"
         />
         <img
           (click)="translateWebsite('en')"
           [src]="enImageSrc"
           alt="en-language"
-          [ngClass]="{'active': isEnActive}"
+          [ngClass]="{ active: isEnActive }"
         />
       </div>
     </div>
   </div>
 
   <div class="developer-data">
-
+    <div class="author-badge">
+      <img src="../../../assets/img/navbar/logo_hover.svg" alt="logo" />
+      <div class="navbar-logo"></div>
+      <b>D. Dona</b>
+      <span>developer</span>
       <div class="social-media-container">
         <a href="https://github.com/DanieleDona1" target="_blank"
           ><img src="assets/img/contact_me/github-white.svg" alt="github"
@@ -37,17 +41,14 @@
         <a href="mailto:contact@daniele-dona.de" target="_blank">
           <img src="assets/img/contact_me/mail-white.svg" alt="mail" />
         </a>
-
-        <a href="https://www.linkedin.com/in/daniele-dona-7ab119356/" target="_blank"
+        <a
+          href="https://www.linkedin.com/in/daniele-dona-7ab119356/"
+          target="_blank"
           ><img src="assets/img/contact_me/linkedin-white.svg" alt="linkedin"
         /></a>
       </div>
-
-    <div class="author-badge">
-      <div class="navbar-logo"></div>
-      <b>D. Dona</b>
-      <span>developer</span>
     </div>
+
     <div class="developer-card">
       <h1>&nbsp;Daniele Dona&nbsp;</h1>
       <h2>Frontend Developer</h2>
@@ -55,9 +56,8 @@
 
     <div class="scroll-btn-container">
       <a href="#about-me">
-        <img src="assets/img/landing_page/arrow_down.svg" alt="arrow-down">
+        <img src="assets/img/landing_page/arrow_down.svg" alt="arrow-down" />
       </a>
     </div>
-
   </div>
 </section>
