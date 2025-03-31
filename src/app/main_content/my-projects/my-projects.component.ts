@@ -47,7 +47,7 @@ export class MyProjectsComponent implements AfterViewInit {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, 350);
+          }, 0);
         }
       });
     }, { threshold: 0.5 });
