@@ -50,8 +50,6 @@ export class HeaderComponent implements OnInit {
   getHeaderStyles() {
     const isImprint: boolean = this.router.url.includes('/imprint');
     const isPrivacy: boolean = this.router.url.includes('/privacy-policy');
-    console.log(isImprint);
-
     const styles: { [key: string]: string } = {};
 
     if (isImprint || isPrivacy) {
