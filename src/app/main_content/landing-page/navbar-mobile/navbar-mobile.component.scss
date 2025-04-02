@@ -1,8 +1,22 @@
 .toolbar {
-  background-color: rgba(38, 46, 52, 1);
+  background-color: rgba(137, 188, 217, 1);
   height: 10dvh;
   height: 10dvh;
-  display: none;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.nav-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 100px;
+  height: 10vh;
 }
 
 .author-badge {
@@ -11,15 +25,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 8px;
-  // background-color: rgba(137, 188, 217, 1);
+  text-decoration: none;
+  gap: 4px;
 
-  >div {
-    width: 30px;
-    height: 20px;
-    background-image: url('../../../../assets/img/navbar/logo_hover.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
+  img {
+    width: 32px;
+    height: 32px;
   }
 
   >b {
@@ -28,14 +39,14 @@
   }
 
   >span {
-    color: rgba(137, 188, 217, 1);
+    color: rgba(38, 46, 52, 1);
     font-size: 14px;
   }
 }
 
 .burger-menu {
+  display: none;
   margin-left: auto;
-  margin-top: 24px;
   margin-right: 8px;
   width: 35px;
   height: 25px;
@@ -44,7 +55,6 @@
   cursor: pointer;
   position: relative;
   padding: 0;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   outline: none;
@@ -75,8 +85,75 @@
 
 }
 
-@media (max-width: 1023px) {
+
+.navigation-container {
+  background-color: rgba(137, 188, 217, 1);
+  display: flex;
+  gap: 112px;
+
+  >a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgba(38, 46, 52, 1);
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: rgba(248, 245, 236, 1);
+    }
+  }
+}
+
+.language-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+
+  img:first-child:hover {
+    content: url('../../../../assets/img/navbar/de_hover.svg');
+    transform: scale(1.1);
+  }
+
+  img:nth-child(2):hover {
+    content: url('../../../../assets/img/navbar/en_hover.svg');
+    transform: scale(1.1);
+  }
+
+  img.active {
+    padding: 6px;
+    background-color: rgba(38, 46, 52, 0.2);
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 1180px) {
   .toolbar {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  .nav-wrapper {
+    padding: 16px 0px;
+  }
+
+  .author-badge {
+    img {
+      content: url('../../../../assets/img/navbar/logo_hover.svg');
+    }
+
+    span {
+      color: rgb(137, 188, 217);
+    }
+  }
+
+  .burger-menu {
     display: flex;
+  }
+
+  .navigation-container,
+  .language-container {
+    display: none;
   }
 }

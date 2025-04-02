@@ -202,17 +202,28 @@ section {
     padding-top: 100px;
   }
 }
-
-@media (max-width: 1023px) {
+@media (max-width: 1180px) {
+  .background-image {
+    transform: translate(4%, 1px);
+  }
+  section {
+    height: 100vh;
+  }
   section {
     flex-direction: column;
     align-items: center;
-    padding-top: 24px;
+    padding-top: 10vh;
   }
-
   .author-badge {
     display: none;
   }
+  .image-wrapper {
+    padding-top: 32px;
+  }
+}
+
+@media (max-width: 1023px) {
+
 
   app-navbar {
     display: none;
@@ -235,10 +246,6 @@ section {
   h1 {
     padding-top: 4px;
     padding-bottom: 0;
-  }
-
-  .background-image {
-    transform: translate(4%, 1px);
   }
 
   .social-media-container {
