@@ -5,13 +5,14 @@ import {
   Renderer2,
   inject,
 } from '@angular/core';
-import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @Component({
   selector: 'app-landing-page',
-  imports: [NavbarMobileComponent, TranslateModule, CommonModule],
+  imports: [TranslateModule, CommonModule, NavbarComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })

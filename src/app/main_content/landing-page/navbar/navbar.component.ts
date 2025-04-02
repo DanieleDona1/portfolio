@@ -3,12 +3,12 @@ import { Component, Output, EventEmitter, inject, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-navbar-mobile',
+  selector: 'app-navbar',
   imports: [ TranslateModule, CommonModule ],
-  templateUrl: './navbar-mobile.component.html',
-  styleUrl: './navbar-mobile.component.scss'
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss'
 })
-export class NavbarMobileComponent implements OnInit {
+export class NavbarComponent implements OnInit {
   @Output() displayChanged = new EventEmitter<void>();
 
   changeDisplayFlex() {
