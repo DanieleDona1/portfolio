@@ -7,6 +7,28 @@ $primary-bg-color: rgba(38, 46, 52, 1);
   scroll-behavior: smooth;
 }
 
+* {
+  // scrollbar-width: thin;
+  scrollbar-color: rgba(137, 188, 217, 1) transparent;
+}
+
+::-webkit-scrollbar {
+  width: thin;
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(137, 188, 217, 1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(38, 46, 52, 1);
+  border: 1px solid rgba(38, 46, 52, 1);
+}
+
+
+
 body {
   background-color: $primary-bg-color;
 }
