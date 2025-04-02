@@ -58,7 +58,7 @@ export class HeaderComponent implements OnInit {
     if (isImprint || isPrivacy) {
       styles['display'] = 'flex';
       this.scrollToTopInstant();
-    } else {
+    } else if (!isImprint){
       styles['display'] = 'none';
     }
     return styles;
