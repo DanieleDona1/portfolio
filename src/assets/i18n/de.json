@@ -10,7 +10,7 @@
   },
   "ABOUT_ME": {
     "TITLE": "Über mich",
-    "DESCRIPTION": "Ich bin begeistert vom Programmieren, weil es Kreativität mit Problemlösung verbindet. Ich gehe Herausforderungen gerne mit analytischem Denken und Ausdauer an und glaube an die Kraft der Zusammenarbeit, um die besten Lösungen zu schaffen."
+    "DESCRIPTION": "Ich bin begeistert vom Programmieren, weil es Kreativität mit Problemlösung verbindet. Ich gehe Herausforderungen gerne mit analytischem Denken und Ausdauer an und ich bin überzeugt, dass Zusammenarbeit die besten Lösungen hervorbringt."
   },
   "MY_SKILLS": {
     "TITLE": "Mein Fähigkeiten",
@@ -23,7 +23,7 @@
     "LIST": [
       {
         "NAME": "Join",
-        "DESCRIPTION": "Ein Task-Manager, inspiriert vom Kanban-System. Legen Sie Benutzer und Kategorien an, um Aufgaben zuzuweisen und via Drag & Drop-Funktionen zu organisieren und zu verwalten."
+        "DESCRIPTION": "Ein Task-Manager, inspiriert vom Kanban-System. Lege Benutzer und Kategorien an, um Aufgaben zuzuweisen und via Drag & Drop-Funktionen zu organisieren und zu verwalten."
       },
       {
         "NAME": "El Pollo Loco",
@@ -37,8 +37,8 @@
   },
   "CONTACT_ME": {
     "TITLE": "Kontaktiere mich",
-    "CLIENT_QUESTION": "Haben Sie ein Projekt im Sinn?",
-    "DESCRIPTION": "Nehmen Sie gerne über dieses Formular Kontakt auf – ich freue mich darauf, mehr über Ihre Ideen zu erfahren und zu sehen, wie ich Ihre Projekte unterstützen kann.",
+    "CLIENT_QUESTION": "Ein Projekt im Sinn?",
+    "DESCRIPTION": "Nehme gerne über dieses Formular Kontakt auf – ich freue mich darauf, mehr über deine Ideen zu erfahren und zu sehen, wie ich die Projekte unterstützen kann.",
     "INVITATION": "Lass uns reden!",
     "BUTTON": "Lass uns reden"
   },
