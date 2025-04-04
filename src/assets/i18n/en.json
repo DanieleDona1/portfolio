@@ -55,9 +55,9 @@
       "PRIVACY_POLICY_END": " and agree to the processing of my data."
     },
     "PLACEHOLDERS": {
-      "NAME": "Your Name",
-      "EMAIL": "Your Email",
-      "MESSAGE": "Your Message"
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "MESSAGE": "Message"
     },
     "ERRORS": {
       "NAME_REQUIRED": "Name is required",

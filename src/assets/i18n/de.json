@@ -47,9 +47,9 @@
   },
     "FORM_FIELDS": {
       "LABELS": {
-        "NAME": "Dein Name",
-        "EMAIL": "Deine Email",
-        "MESSAGE": "Deine Nachricht",
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "MESSAGE": "Nachricht",
         "PRIVACY_POLICY": "Ich habe die ",
         "PRIVACY_POLICY_LINK": "Datenschutzerklärung",
         "PRIVACY_POLICY_END": " gelesen und stimme der Verarbeitung meiner Daten zu."
