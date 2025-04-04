@@ -1,73 +1,82 @@
-import { Component, OnInit } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-why-me',
-  imports: [TranslateModule ],
+  imports: [TranslateModule],
   templateUrl: './why-me.component.html',
-  styleUrl: './why-me.component.scss'
+  styleUrl: './why-me.component.scss',
 })
-export class WhyMeComponent implements OnInit{
+export class WhyMeComponent implements OnInit {
+  // translate: TranslateService = inject(TranslateService);
+  // currentLanguage: string = this.translate.currentLang || "en";
+  // selectedLanguage: string[] = [];
 
-  private config = {
-    typeSpeed: 100,
-    deleteSpeed: 50,
-    pauseAfterTyping: 2000,
-    pauseBetweenSentences: 500
-  };
+  sentencesDe = [
+    'aus Heidelberg.',
+    'offen für eine neuen Job.',
+    'bereit, umzuziehen.',
+  ];
 
-  private sentences = [
-    "located in Heidelberg.",
-    "open to work.",
-    "open to relocate."
+  sentencesEn = [
+    'located in Heidelberg.',
+    'open to work.',
+    'open to relocate.',
   ];
 
   private images = [
-    "assets/img/why_me/location_icon.svg",
-    "assets/img/why_me/remote_icon.svg",
-    "assets/img/why_me/relocate_icon.svg"
+    'assets/img/why_me/location_icon.svg',
+    'assets/img/why_me/remote_icon.svg',
+    'assets/img/why_me/relocate_icon.svg',
   ];
 
-  currentText = '';
+  currentIndex = 0;
+  displayedText = '';
   currentImage = this.images[0];
-  private index = 0;
-  private isDeleting = false;
-  private timeoutId: any;
+  isTyping = false;
+  isDeleting = false;
+  typingSpeed = 100; // milliseconds per character
+  deletingSpeed = 50;
+  pauseBetweenSentences = 2000;
+  isCursorBlinking = false;
+  private timeoutRef: any;
 
-  ngOnInit(): void {
-    this.type();
+  ngOnInit() {
+    this.typeSentence();
   }
 
-  ngOnDestroy(): void {
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
+  ngOnDestroy() {
+    if (this.timeoutRef) {
+      clearTimeout(this.timeoutRef);
     }
   }
 
-  private type(): void {
-    const currentSentence = this.sentences[this.index];
+  typeSentence() {
+    const currentSentence = this.sentencesEn[this.currentIndex];
+    this.currentImage = this.images[this.currentIndex];
 
-    if (!this.isDeleting) {
-      // Typing mode
-      this.currentText = currentSentence.substring(0, this.currentText.length + 1);
+    if (this.isDeleting) {
+      this.displayedText = currentSentence.substring(0, this.displayedText.length - 1);
 
-      if (this.currentText === currentSentence) {
-        this.isDeleting = true;
-        this.timeoutId = setTimeout(() => this.type(), this.config.pauseAfterTyping);
+      if (this.displayedText === '') {
+        this.isDeleting = false;
+        this.currentIndex = (this.currentIndex + 1) % this.sentencesEn.length;
+        this.timeoutRef = setTimeout(() => this.typeSentence(), this.typingSpeed);
       } else {
-        this.timeoutId = setTimeout(() => this.type(), this.config.typeSpeed);
+        this.timeoutRef = setTimeout(() => this.typeSentence(), this.deletingSpeed);
       }
     } else {
-      // Deleting mode
-      this.currentText = currentSentence.substring(0, this.currentText.length - 1);
+      this.displayedText = currentSentence.substring(0, this.displayedText.length + 1);
 
-      if (this.currentText === '') {
-        this.isDeleting = false;
-        this.index = (this.index + 1) % this.sentences.length;
-        this.currentImage = this.images[this.index];
-        this.timeoutId = setTimeout(() => this.type(), this.config.pauseBetweenSentences);
+      if (this.displayedText === currentSentence) {
+        this.isCursorBlinking = true;
+        this.timeoutRef = setTimeout(() => {
+          this.isDeleting = true;
+          this.isCursorBlinking = false;
+          this.typeSentence();
+        }, this.pauseBetweenSentences);
       } else {
-        this.timeoutId = setTimeout(() => this.type(), this.config.deleteSpeed);
+        this.timeoutRef = setTimeout(() => this.typeSentence(), this.typingSpeed);
       }
     }
   }

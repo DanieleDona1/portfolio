@@ -12,6 +12,9 @@
     "TITLE": "About Me",
     "DESCRIPTION": "I'm passionate about programming because it combines creativity with problem-solving. I enjoy tackling challenges with analytical thinking and perseverance, and I believe in the power of collaboration to create the best solutions."
   },
+  "TYPEWRITER": {
+    "PREFIX": "I am"
+  },
   "MY_SKILLS": {
     "TITLE": "My Skills",
     "FOCUS": "Currently I'm focusing on"

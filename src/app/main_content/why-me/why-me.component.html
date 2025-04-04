@@ -9,8 +9,8 @@
       <div class="typewriter-container">
         <img [src]="currentImage" alt="Icon" width="40" height="40">
         <div class="typewriter">
-          <b class="highlighter">I am&nbsp;</b>
-          <span class="dynamic-text">{{ currentText }}</span>
+          <b class="highlighter">{{ 'TYPEWRITER.PREFIX' | translate }}&nbsp;</b>
+          <span class="dynamic-text">{{ displayedText }}</span>
           <span class="cursor">|</span>
         </div>
       </div>

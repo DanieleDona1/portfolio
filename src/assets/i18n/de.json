@@ -12,6 +12,9 @@
     "TITLE": "Über mich",
     "DESCRIPTION": "Ich bin begeistert vom Programmieren, weil es Kreativität mit Problemlösung verbindet. Ich gehe Herausforderungen gerne mit analytischem Denken und Ausdauer an und ich bin überzeugt, dass Zusammenarbeit die besten Lösungen hervorbringt."
   },
+  "TYPEWRITER": {
+    "PREFIX": "Ich bin"
+  },
   "MY_SKILLS": {
     "TITLE": "Mein Fähigkeiten",
     "FOCUS": "Aktuell fokussiere ich mich auf"
@@ -44,17 +47,17 @@
   },
     "FORM_FIELDS": {
       "LABELS": {
-        "NAME": "Name",
-        "EMAIL": "Email",
-        "MESSAGE": "Nachricht",
+        "NAME": "Dein Name",
+        "EMAIL": "Deine Email",
+        "MESSAGE": "Deine Nachricht",
         "PRIVACY_POLICY": "Ich habe die ",
         "PRIVACY_POLICY_LINK": "Datenschutzerklärung",
         "PRIVACY_POLICY_END": " gelesen und stimme der Verarbeitung meiner Daten zu."
       },
       "PLACEHOLDERS": {
-        "NAME": "Ihr Name",
-        "EMAIL": "Ihre Email",
-        "MESSAGE": "Ihre Nachricht"
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "MESSAGE": "Nachricht"
       },
       "ERRORS": {
         "NAME_REQUIRED": "Der Name ist erforderlich",
