@@ -5,33 +5,34 @@
   </span>
 
   <div id="project-container" class="project-container">
-    <div
-      *ngFor="let project of projects; let i = index"
-      class="project-group"
-      [ngClass]="{ 'slide-in-right': i % 2 === 0, 'slide-in-left row-reverse': i % 2 !== 0 }"
-    >
-      <a [href]="project.projectLink" target="_blank" class="project-img-container">
-        <img
-          [src]="project.imageSrc"
-          alt="project-img"
-          loading="lazy"
-        />
-        <span>START</span>
-      </a>
-      <div class="project-description">
-        <h3>{{ project.name }}</h3>
-        <b>{{ project.technologies }}</b>
-        <p>{{ project.description | translate }}</p>
-        <div class="btn-container">
-          <a [href]="project.projectLink" target="_blank">
-            <button>{{ 'MY_PROJECTS.BUTTON' | translate }}</button>
-          </a>
-          <a [href]="project.githubLink" target="_blank">
-            <button>GitHub</button>
-          </a>
+    @for (project of projects; track project.id; let i = $index) {
+      <div
+        class="project-group"
+        [ngClass]="{ 'slide-in-right': i % 2 === 0, 'slide-in-left row-reverse': i % 2 !== 0 }"
+      >
+        <a [href]="project.projectLink" target="_blank" class="project-img-container">
+          <img
+            [src]="project.imageSrc"
+            alt="project-img"
+            loading="lazy"
+          />
+          <span>START</span>
+        </a>
+        <div class="project-description">
+          <h3>{{ project.name }}</h3>
+          <b>{{ project.technologies }}</b>
+          <p>{{ project.description | translate }}</p>
+          <div class="btn-container">
+            <a [href]="project.projectLink" target="_blank">
+              <button>{{ 'MY_PROJECTS.BUTTON' | translate }}</button>
+            </a>
+            <a [href]="project.githubLink" target="_blank">
+              <button>GitHub</button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    }
   </div>
 
 </section>

@@ -1,5 +1,5 @@
 
-@mixin d-flex($jc:center, $ai:center) {
+@mixin d-flex($jc:flex-start, $ai:stretch) {
   display: flex;
   justify-content: $jc;
   align-items: $ai;
