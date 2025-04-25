@@ -40,8 +40,8 @@ export class LandingPageComponent {
   deImageSrc = '../../../../assets/img/navbar/de.svg';
   enImageSrc = '../../../../assets/img/navbar/en.svg';
 
-  isDeActive: boolean = false;
-  isEnActive: boolean = true;
+  isDeActive = false;
+  isEnActive = true;
 
   changeLanguageImg(language: string): void {
     this.isDeActive = language === 'de';

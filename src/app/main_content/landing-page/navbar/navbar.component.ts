@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   deImageSrc = '../../../../assets/img/navbar/de.svg';
   enImageSrc = '../../../../assets/img/navbar/en.svg';
 
-  activeLanguage: string = '';
+  activeLanguage = '';
 
   ngOnInit(): void {
     this.setInitialLanguage();

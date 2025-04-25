@@ -26,12 +26,14 @@
         [src]="deImageSrc"
         alt="de-language"
         [ngClass]="{'active': isActive('de')}"
-      />
-      <img
+        tabindex="-1"
+        />
+        <img
         (click)="translateWebsite('en')"
         [src]="enImageSrc"
         alt="en-language"
         [ngClass]="{'active': isActive('en')}"
+        tabindex="-1"
       />
     </div>
 

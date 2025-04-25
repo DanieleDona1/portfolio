@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   deImageSrc = '../../assets/img/navbar/de.svg';
   enImageSrc = '../../assets/img/navbar/en.svg';
 
-  activeLanguage: string = '';
+  activeLanguage = '';
 
   ngOnInit(): void {
     this.setInitialLanguage();
@@ -53,7 +53,7 @@ export class HeaderComponent implements OnInit {
   getHeaderStyles() {
     const isImprint: boolean = this.router.url.includes('/imprint');
     const isPrivacy: boolean = this.router.url.includes('/privacy-policy');
-    const styles: { [key: string]: string } = {};
+    const styles: Record<string, string> = {};
 
     if (isImprint || isPrivacy) {
       styles['display'] = 'flex';

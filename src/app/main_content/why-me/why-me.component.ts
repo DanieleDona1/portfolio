@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-why-me',
@@ -7,11 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './why-me.component.html',
   styleUrl: './why-me.component.scss',
 })
-export class WhyMeComponent implements OnInit {
-  // translate: TranslateService = inject(TranslateService);
-  // currentLanguage: string = this.translate.currentLang || "en";
-  // selectedLanguage: string[] = [];
-
+export class WhyMeComponent implements OnInit, OnDestroy {
   sentencesDe = [
     'aus Heidelberg.',
     'offen für eine neuen Job.',

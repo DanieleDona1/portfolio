@@ -39,8 +39,6 @@ export class MyProjectsComponent implements AfterViewInit {
     },
   ];
 
-  constructor() { }
-
   ngAfterViewInit() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
