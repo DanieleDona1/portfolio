@@ -13,20 +13,20 @@
     </div>
 
     <div class="language-container">
-      <img
+      <button
         (click)="translateWebsite('de')"
-        [src]="deImageSrc"
-        alt="de-language"
-        [ngClass]="{'active': isActive('de')}"
-        tabindex="-1"
-      />
-      <img
+        [ngClass]="{ active: isActive('de') }"
+        aria-label="Sprache auf Deutsch ändern"
+      >
+        <img [src]="deImageSrc" alt="Deutsche Sprache" />
+      </button>
+      <button
         (click)="translateWebsite('en')"
-        [src]="enImageSrc"
-        alt="en-language"
-        [ngClass]="{'active': isActive('en')}"
-        tabindex="-1"
-      />
+        [ngClass]="{ active: isActive('en') }"
+        aria-label="Change language to English"
+      >
+        <img [src]="enImageSrc" alt="English language" />
+      </button>
     </div>
   </div>
 </header>
