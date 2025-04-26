@@ -55,7 +55,7 @@ section {
 
 .menu {
   background-image: url('../../../assets/img/landing_page/menu_image.svg');
-  width: 140%;
+  width: 100%;
   height: 110%;
   background-size: contain;
   display: none;
@@ -156,8 +156,9 @@ section {
   border: none;
   padding: 4px 10px;
   font-size: 18px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
   transition: background-color 0.2s;
+  border-radius: 50%;
 
   &:hover {
     transform: scale(1.1);
