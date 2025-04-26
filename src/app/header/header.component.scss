@@ -71,23 +71,33 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  cursor: pointer;
 
-  img:first-child:hover {
-    content: url('../../assets/img/navbar/de_hover.svg');
-    transform: scale(1.1);
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
   }
 
-  img:nth-child(2):hover {
-    content: url('../../assets/img/navbar/en_hover.svg');
-    transform: scale(1.1);
-
-  }
-
-  img.active {
+  button.active img {
     padding: 6px;
     background-color: rgba(38, 46, 52, 0.2);
     border-radius: 4px;
+  }
+
+  button:first-child:hover {
+    img {
+      content: url('../../assets/img/navbar/de_hover.svg');
+      transform: scale(1.1);
+    }
+  }
+
+  button:nth-child(2):hover {
+    img {
+      content: url('../../assets/img/navbar/en_hover.svg');
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -103,7 +113,8 @@ header {
   .navigation-container {
     display: none;
   }
-  header > div{
+
+  header>div {
     padding: 16px 50px;
-}
+  }
 }

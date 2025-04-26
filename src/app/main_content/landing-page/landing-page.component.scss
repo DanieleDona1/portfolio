@@ -202,33 +202,32 @@ section {
     padding-top: 100px;
   }
 }
+
 @media (max-width: 1180px) {
   .background-image {
     transform: translate(4%, 1px);
   }
+
   section {
     height: 100vh;
   }
+
   section {
     flex-direction: column;
     align-items: center;
     padding-top: 10vh;
   }
+
   .author-badge {
     display: none;
   }
+
   .image-wrapper {
     padding-top: 32px;
   }
 }
 
 @media (max-width: 1023px) {
-
-
-  app-navbar {
-    display: none;
-  }
-
   .developer-data {
     justify-content: flex-start;
     padding-bottom: 0;
@@ -314,24 +313,32 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-top: 10px;
-  cursor: pointer;
 
-  img:first-child:hover {
-    content: url('../../../assets/img/navbar/de_hover.svg');
-    transform: scale(1.1);
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
   }
 
-  img:nth-child(2):hover {
-    content: url('../../../assets/img/navbar/en_hover.svg');
-    transform: scale(1.1);
-
-  }
-
-  img.active {
+  button.active img {
     padding: 6px;
     background-color: rgba(38, 46, 52, 0.2);
     border-radius: 4px;
+  }
+
+  button:first-child:hover {
+    img {
+      content: url('../../../assets/img/navbar/de_hover.svg');
+      transform: scale(1.1);
+    }
+  }
+
+  button:nth-child(2):hover {
+    img {
+      content: url('../../../assets/img/navbar/en_hover.svg');
+      transform: scale(1.1);
+    }
   }
 }
