@@ -4,6 +4,14 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+
+interface ContactData {
+  name: string;
+  email: string;
+  message: string;
+  privacyPolicy: boolean;
+}
+
 @Component({
   selector: 'app-contact-me',
   imports: [FormsModule, CommonModule, TranslateModule, RouterLink],
@@ -14,7 +22,7 @@ export class ContactMeComponent {
   isSubmitted = false;
   http = inject(HttpClient);
 
-  contactData = {
+  contactData: ContactData = {
     name: '',
     email: '',
     message: '',
@@ -25,7 +33,7 @@ export class ContactMeComponent {
 
   post = {
     endPoint: 'https://portfolio.daniele-dona.de/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
+    body: (payload: ContactData) => JSON.stringify(payload),
     options: {
       headers: {
         'Content-Type': 'text/plain',
