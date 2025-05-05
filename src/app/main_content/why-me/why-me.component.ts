@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-why-me',
@@ -20,6 +20,8 @@ export class WhyMeComponent implements OnInit, OnDestroy {
     'open to relocate.',
   ];
 
+  sentences: string[] = this.sentencesEn;
+
   private images = [
     'assets/img/why_me/location_icon.svg',
     'assets/img/why_me/remote_icon.svg',
@@ -31,11 +33,21 @@ export class WhyMeComponent implements OnInit, OnDestroy {
   currentImage = this.images[0];
   isTyping = false;
   isDeleting = false;
-  typingSpeed = 100; // milliseconds per character
+  typingSpeed = 100;
   deletingSpeed = 50;
   pauseBetweenSentences = 2000;
   isCursorBlinking = false;
-  private timeoutRef: any;
+  private timeoutRef: ReturnType<typeof setTimeout> | null = null;
+
+  translate = inject(TranslateService);
+
+  constructor() {
+    this.setSentencesByLang(this.translate.currentLang || this.translate.getDefaultLang());
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.setSentencesByLang(event.lang);
+      this.resetTyping();
+    });
+  }
 
   ngOnInit() {
     this.typeSentence();
@@ -47,8 +59,24 @@ export class WhyMeComponent implements OnInit, OnDestroy {
     }
   }
 
+  setSentencesByLang(lang: string) {
+    this.sentences = lang === 'de' ? this.sentencesDe : this.sentencesEn;
+    this.currentIndex = 0;
+    this.displayedText = '';
+    this.currentImage = this.images[0];
+  }
+
+  resetTyping() {
+    if (this.timeoutRef) {
+      clearTimeout(this.timeoutRef);
+    }
+    this.isDeleting = false;
+    this.isCursorBlinking = false;
+    this.typeSentence();
+  }
+
   typeSentence() {
-    const currentSentence = this.sentencesEn[this.currentIndex];
+    const currentSentence = this.sentences[this.currentIndex];
     this.currentImage = this.images[this.currentIndex];
 
     if (this.isDeleting) {
@@ -56,7 +84,7 @@ export class WhyMeComponent implements OnInit, OnDestroy {
 
       if (this.displayedText === '') {
         this.isDeleting = false;
-        this.currentIndex = (this.currentIndex + 1) % this.sentencesEn.length;
+        this.currentIndex = (this.currentIndex + 1) % this.sentences.length;
         this.timeoutRef = setTimeout(() => this.typeSentence(), this.typingSpeed);
       } else {
         this.timeoutRef = setTimeout(() => this.typeSentence(), this.deletingSpeed);
